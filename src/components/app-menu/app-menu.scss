@@ -1,0 +1,57 @@
+app-menu {
+    .folder-list .folder {
+        & ion-icon[name=trash] {
+            display: none;
+        }
+
+        &:hover ion-icon[name=trash] {
+            display: block;
+        }
+
+    }
+
+    ion-icon {
+        &[class*="custom-"] {
+            mask-size: contain;
+            mask-position: 50% 50%;
+            mask-repeat: no-repeat;
+            background: currentColor;
+            width: 1em;
+            height: 1em;
+        }
+        &[class*="custom-trash-icon"] {
+            mask-image: url(../assets/img/icons/trash.svg);
+        }
+        &[class*="custom-mail-icon"] {
+            mask-image: url(../assets/img/icons/mail.svg);
+        }
+        &[class*="custom-star-icon"] {
+            mask-image: url(../assets/img/icons/star.svg);
+        }
+        &[class*="custom-filing-icon"] {
+            mask-image: url(../assets/img/icons/filing.svg);
+        }
+        &[class*="custom-folder-icon"] {
+            mask-image: url(../assets/img/icons/folder.svg);
+        }
+        &[class*="custom-user-icon"] {
+            mask-image: url(../assets/img/icons/user.svg);
+        }
+}
+    @media only screen and (max-width: 799px){
+        #footer{
+            padding-top: 30px;
+            background-color: #fff;
+        }
+        .item-inner {
+            border-box: none;
+        }
+    }
+
+
+}
+ion-menu{
+    .menu-inner{
+        width: 100%;
+    }
+}

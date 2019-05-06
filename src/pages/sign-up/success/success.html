@@ -1,0 +1,15 @@
+<ion-content padding text-center>
+  <ion-row class="logo">
+    <ion-col>
+      <img src="assets/img/digitalkasten-logo.svg">
+    </ion-col>
+  </ion-row>
+  <ion-list padding style="background: #fff; margin-top: 50px !important;  border-radius: 7px" id="success-box">
+    <ion-icon ios="ios-checkmark-circle" md="md-checkmark-circle"></ion-icon>
+    <h1>{{ 'signUp.registrationSuccess.title' | translate }}</h1>
+    <p>{{ 'signUp.registrationSuccess.text' | translate }}</p>
+    <button ion-button full (click)="onRedirect()">{{ 'signUp.registrationSuccess.login' | translate }}</button>
+  </ion-list>
+  <div class="fb-share-button" data-href="https://digitalkasten.de/" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.digitalkasten.de%2F&amp;src=sdkpreparse">Mit Freunden auf Facebook teilen</a></div>
+
+</ion-content>

@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ 'myData.createFreeBusinessAccount' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <form novalidate [formGroup]="form" (ngSubmit)="onSubmit($event)" (keyup)="checkUserForm(1)" id="signup-form">
+    <div padding>
+      <h4>{{ 'myData.pickYourEmail' | translate }}</h4>
+    </div>
+
+    <ion-list class="account-form" formGroupName="emails"  style="border-box: none">
+      <ion-item style = "border-top-left-radius: 7px; border-top-right-radius: 7px;">
+        <ion-label stacked>{{ 'myData.email' | translate }}</ion-label>
+        <ion-input type="email" placeholder="{{ 'myData.emailPlaceholder' | translate }}" autocomplete="on" formControlName="email" required></ion-input>
+      </ion-item>
+      <ion-item style = " border-bottom-left-radius: 7px; border-bottom-right-radius: 7px;">
+        <ion-label stacked>{{ 'myData.repeatEmail' | translate }}</ion-label>
+        <ion-input type="email" placeholder="{{ 'myData.repeatEmailPlaceholder' | translate }}" autocomplete="on" formControlName="emailConfirmation" required></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <div padding>
+      <h4>{{ 'myData.pickYourPassword' | translate }}</h4>
+    </div>
+    
+    <ion-list class="account-form" formGroupName="passwords" style="border-box: none">
+      <ion-item style="border-top-left-radius: 7px; border-top-right-radius: 7px;">
+        <ion-label stacked>{{ 'myData.password' | translate }}</ion-label>
+        <ion-input type="password" placeholder="{{ 'myData.passwordPlaceholder' | translate }}" autocomplete="on" formControlName="password" required></ion-input>
+      </ion-item>
+      <ion-item style= " border-bottom-left-radius: 7px; border-bottom-right-radius: 7px;">
+        <ion-label stacked>{{ 'myData.repeatPassword' | translate }}</ion-label>
+        <ion-input type="password" placeholder="{{ 'myData.repeatPasswordPlaceholder' | translate }}" autocomplete="on" formControlName="passwordConfirmation" required></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <div padding>
+      <h4>{{ 'myData.pickPhoneNumber' | translate }}</h4>
+    </div>
+
+    <ion-list class="account-form" style="border-box: none">
+      <ion-item style="border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-left-radius: 7px; border-bottom-right-radius: 7px">
+        <ion-label stacked>{{ 'myData.phone' | translate }}</ion-label>
+        <ion-input type="number" placeholder="{{ 'myData.phonePlaceholder' | translate }}" autocomplete="on" formControlName="phone"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <div padding>
+      <h4>{{ 'myData.companyPick' | translate }}</h4>
+    </div>
+
+    <ion-list class="account-form"  style="border-box: none">
+      <ion-item style="border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-left-radius: 7px; border-bottom-right-radius: 7px">
+        <ion-label stacked>{{ 'myData.company' | translate }}</ion-label>
+        <ion-input type="string" placeholder="{{ 'myData.companyPlaceholder' | translate }}" autocomplete="on" formControlName="company"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <div padding>
+      <h4>{{ 'myData.termsOfServiceAndDataPolicy' | translate }}</h4>
+    </div>
+
+    <ion-list class="account-form" style="margin-bottom: 0px;border-box: none">
+      <ion-item text-wrap style="border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-left-radius: 7px; border-bottom-right-radius: 7px">
+        <ion-label>{{ 'signUp.freeAccount.acceptLegal' | translate }}</ion-label>
+        <ion-checkbox formControlName="legal" style="margin-left: 15px;"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+
+  <div no-margin>
+    <button clear ion-button (click)="readTermsAndConditions($event)" color="secondary">{{ 'signUp.freeAccount.termsAndConditions' | translate }}</button>
+    <button clear ion-button (click)="readPrivacyPolicy($event)" color="secondary">{{ 'signUp.freeAccount.privacyPolicy' | translate }}</button>
+  </div>
+
+    <div class="errors" *ngIf="serverErrors.length">
+      <ion-list>
+        <ion-item color="danger" *ngFor="let error of serverErrors">
+          {{ error }}
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <div style="margin-top: 20px;">
+      <button ion-button full type="submit">{{ 'general.continue' | translate }}</button>
+      <button ion-button block clear (click)="goBack($event)" color="secondary">{{ 'requestPassword.back' | translate }}</button>
+    </div>
+  </form>
+</ion-content>

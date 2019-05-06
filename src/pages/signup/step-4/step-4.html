@@ -1,0 +1,61 @@
+<ion-content style="background:#F5F5F5">
+  <div padding>
+    <div class="progress-wrapper" style="display:flex;">
+      <ion-icon [navPush]="toViewTwo" name="arrow-back" style="color:#888; padding-top: 11px; font-size: 26px;"></ion-icon>
+      <div class="progress-chart">
+        <div [navPush]="toViewOne" class="step active">
+          <ion-icon name="md-home"></ion-icon>
+        </div>
+        <div class="line active"></div>
+        <div [navPush]="toViewTwo" class="step active">
+          <ion-icon name="md-options"></ion-icon>
+        </div>
+        <div class="line active"></div>
+        <div [navPush]="toViewThree" class="step active">
+          <ion-icon name="md-card"></ion-icon>
+        </div>
+        <div class="line active"></div>
+        <div class="step active">
+          <ion-icon name="md-mail"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div padding>
+    <h4>{{ 'signup.step3.title' | translate }}</h4>
+  </div>
+  <form [formGroup]="form" (ngSubmit)="formSubmitted($event)" novalidate>
+    <ion-list>
+      <ion-item>
+        <ion-label>{{ 'signup.step3.termsAndConditions' | translate }}</ion-label>
+        <!-- formControlName="checkedTermsAndConditions" -->
+        <ion-checkbox formControlName="checkedTermsAndConditions"></ion-checkbox>
+      </ion-item>
+      <!-- <ion-item>
+        <ion-label>{{ 'signup.step3.redirectMail' | translate }}</ion-label>
+        <ion-checkbox formControlName="permissionToRedirectMail" (click)="provideSignatureModal($event)"></ion-checkbox>
+      </ion-item> -->
+    </ion-list>
+    <p class="show-details"><span (click)="acceptTermsAndConditions($event)">{{ 'signup.step3.showTermsAndConditions' | translate }}</span></p>
+    <ion-list>
+      <ion-item>
+        <ion-label>{{ 'signup.step3.privacyPolicy' | translate }}</ion-label>
+        <ion-checkbox formControlName="checkedPrivacyPolicy"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+    <p class="show-details"><span (click)="acceptPrivacyPolicy($event)">{{ 'signup.step3.showPrivacyPolicy' | translate }}</span></p>
+    <div *ngIf="errors.length">
+      <div padding>
+        <h4>Fehler in der Registrierung</h4>
+      </div>
+      <ion-list *ngIf="errors.length">
+        <ion-item *ngFor="let error of errors" color="danger" style="color: #fff;">
+          {{ error }}
+        </ion-item>
+      </ion-list>
+    </div>
+    <div padding>
+      <button ion-button full type="submit">{{ 'signup.step3.signup' | translate }}</button>
+    </div>
+  </form>
+</ion-content>

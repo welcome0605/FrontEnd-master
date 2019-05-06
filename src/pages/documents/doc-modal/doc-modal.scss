@@ -1,0 +1,17 @@
+.docpdf {
+  position: initial;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  margin: 4.1em 0em 0em 0em;
+  z-index: 999999;
+}
+.modal-pdf-container{
+  padding:5px;
+}
+.modal-pdf-header{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

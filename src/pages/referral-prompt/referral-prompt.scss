@@ -1,0 +1,52 @@
+referral-prompt {
+  .button-md-secondary {
+    color: #fff;
+    background-color: #32db64;
+  }
+
+  .button-md-secondary:hover:not(.disable-hover) {
+    background-color: #32db64;
+  }
+
+  .full-width {
+    margin: 0px -16px;
+    max-width: none !important;
+  }
+  ion-list-header {
+    margin-top: 16px;
+  }
+  .button-full {
+    margin-top: 0px;
+  }
+  .referral-link{
+    margin: 15px 0px 15px 0px;
+    font-size: 24px;
+    border: 1px solid #888888;
+    border-radius: 25px;
+  }
+  p {
+    text-align: left;
+    margin-top: 10px;
+    font-size: 20px;
+    color: #444;
+  }
+  #facebook-button{
+    background-color:#4267B2  ;
+    border-radius: 25px;
+    a{
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+  @media (min-width: 800px) {
+    .left-aligned {
+      .item-inner {
+        padding-left: 0px !important;
+        ion-icon {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+}

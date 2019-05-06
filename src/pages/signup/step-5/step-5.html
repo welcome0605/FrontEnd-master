@@ -1,0 +1,15 @@
+<ion-content style="background:#F5F5F5">
+  <div padding style="text-align: center">
+    <ion-row class="logo-row" style="margin-bottom:50px;">
+      <ion-col style="text-align: center;">
+        <img class="" src="assets/img/digitalkasten-logo.svg" width="175" height="36" />
+      </ion-col>
+    </ion-row>
+    <ion-list padding style="background:#fff;">
+      <ion-icon ios="ios-checkmark-circle" md="md-checkmark-circle" style="font-size:60px;color:#33cd5f"></ion-icon>
+      <h1 style="margin-top: 10px;margin-bottom: 35px;">{{ 'signup.step4.headline' | translate }}</h1>
+      <p>{{ 'signup.step4.text' | translate }}</p>
+      <button ion-button full [navPush]="goToLogin" style="margin-top:35px;">{{ 'signup.step4.goToLogin' | translate }}</button>
+    </ion-list>
+  </div>
+</ion-content>

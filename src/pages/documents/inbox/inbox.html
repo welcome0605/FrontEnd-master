@@ -1,0 +1,176 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <!--  <img *ngIf="platform.is('core')" class="header-logo" src="assets/img/digitalkasten-logo.svg" style="height:26px; margin-top:10px; display:none;" /> -->
+        <!-- <ion-title style="display:flex;">{{ title }}</ion-title> -->
+        <!-- <ion-input placeholder="Suchen..." class="desktop-search"></ion-input> -->
+        <!-- <ion-searchbar (ionInput)="getItems($event)" debounce="500" class="desktop-search"></ion-searchbar> -->
+        <ion-searchbar #searchbar class="desktop-search" *ngIf="platform.is('core')" [(ngModel)]="queryString" placeholder="{{ 'documents.search.label' | translate }}" (change)="getItems($event)" (ionClear)="clear($event)" autocorrect="off" ></ion-searchbar>
+        <!--<ion-title><img src="assets/img/digitalkasten-logo.svg" style="height: 24px;padding:0px 10px; padding-right:20px;" />{{ title }}</ion-title>-->
+        <ion-title *ngIf="!platform.is('core')">{{title}}</ion-title>
+        <ion-buttons end *ngIf="!platform.is('core')">
+            <button ion-button style="opacity:0;">
+                <ion-icon name="settings"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-buttons end *ngIf="customFolder && !platform.is('core')">
+        <button ion-button (click)="editFolder(customFolder)" color="secondary"><ion-icon name="md-create"></ion-icon></button>
+        <button ion-button (click)="deleteFolderTapped($event,customFolder)" color="secondary"><ion-icon name="md-trash"></ion-icon></button>
+        </ion-buttons>
+    </ion-navbar>
+    <a tappable (click)="referralPromptTapped($event)" *ngIf="!bannerService.getHide() && srceenWidth() > 800">
+        <div class="user-referral-banner" *ngIf="!bannerService.getHide() && srceenWidth() > 800">
+            <ion-grid>
+                <ion-row class="content-row">
+                    <ion-col col-10>
+                        <div class="referral-link">
+                            <p><b>{{ 'referralBanner.referrFriend' | translate }}</b></p>
+                        </div>
+                    </ion-col>
+                    <ion-col col-2>
+                        <ion-buttons end>
+                            <button ion-button class="refferal-banner-button" (click)="closeTapped()" icon-only >
+                                <ion-icon name="close"></ion-icon>
+                            </button>
+                        </ion-buttons>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </a>
+
+</ion-header>
+<ion-content class="inbox">
+    <ion-refresher (ionRefresh)="doRefresh($event)" *ngIf="!searchBarFocused && !isSearchMode">
+
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+
+
+    <form *ngIf="!platform.is('core')" action="." style="border-radius: 13px">
+        <ion-searchbar  #searchbar class="desktop-search" [(ngModel)]="queryString" placeholder="{{ 'documents.search.label' | translate }}"  (change)="getItems($event)" (ionClear)="clear($event)" class="gsfi" id="lst-ib" maxlength="2048" name="q" autocomplete="off" type="search" value="" aria-haspopup="false" role="combobox" aria-autocomplete="both" dir="ltr" spellcheck="false"></ion-searchbar>
+    </form>
+    <a tappable (click)="referralPromptTapped($event)" *ngIf="!bannerService.getHide() && srceenWidth() < 800">
+        <div class="user-referral-banner" *ngIf="!bannerService.getHide() && srceenWidth() < 800">
+            <ion-grid>
+                <ion-row class="content-row">
+                    <ion-col col-10>
+                        <div class="referral-link">
+                            <p><b>{{ 'referralBanner.referrFriend' | translate }}</b></p>
+                        </div>
+                    </ion-col>
+                    <ion-col col-2>
+                        <ion-buttons end>
+                            <button ion-button class="refferal-banner-button" (click)="closeTapped()" icon-only >
+                                <ion-icon name="close"></ion-icon>
+                            </button>
+                        </ion-buttons>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </a>
+    <div *ngIf="!documents.length && first_letter_received===false && account_modificator==='PostfachAccount'">
+        <h4 class="postfach-header">{{ 'general.menu.postfach.titleFirst' | translate }}</h4>
+        <h4 class="postfach-header">{{ 'general.menu.postfach.titleSecond' | translate }}</h4>
+    </div>
+    <div *ngIf="!documents.length && first_letter_received===false && account_modificator==='BulkscanAccount'">
+        <h4 class="bulkscan-header">{{ 'general.menu.bulkscan.titleFirst' | translate }}</h4>
+        <h4 class="bulkscan-header">{{ 'general.menu.bulkscan.titleSecond' | translate }}</h4>
+    </div>
+    <!-- <form action="#">
+      <input class="gsfi" id="lst-ib" maxlength="2048" name="q" autocomplete="off" title="Search" type="text" value="" aria-label="Search" aria-haspopup="false" role="combobox" aria-autocomplete="both" dir="ltr" spellcheck="false">
+    </form> -->
+    <div *ngIf="platform.is('core') && !customFolder" style="display:flex;">
+        <div style="width:60%;flex-basis:60%;align-items:center;display:flex;" padding>
+            <h4 id="boxTitle" *ngIf="!isSearchMode && platform.is('core')&& account_modificator==='User'" style="align-items:center;width:100%;margin-top:0!important;">{{title}}</h4>
+            <h4 id="boxTitle" *ngIf="isSearchMode">{{ 'documents.inbox.searchQuery' | translate:{"query": searchQuery} }}</h4>
+        </div>
+    </div>
+    <div style="text-align:right;align-items: right;" *ngIf="slug == 'sendtome' && documents.length" padding>
+        <button ion-button (click)="sendLetters($event)" color="secondary">{{ 'general.menu.sendButton' | translate }}</button>
+    </div>
+    <div *ngIf="platform.is('core') && customFolder" style="display:flex;">
+        <div style="width:60%;flex-basis:60%;align-items:center;display:flex;" padding>
+            <h4 id="boxTitle" *ngIf="!isSearchMode && platform.is('core')" style="align-items:center;width:100%;margin-top:0!important;">{{ customFolder.title }}</h4>
+        </div>
+        <div style="width:40%;flex-basis:40%;text-align:right;align-items: center;" *ngIf="customFolder" padding>
+
+            <button ion-button (click)="editFolder(customFolder)" color="secondary">
+                <ion-icon name="custom-edit-icon"></ion-icon>
+            </button>
+
+
+            <button ion-button (click)="deleteFolderTapped($event,customFolder)" color="secondary"><ion-icon name="custom-trash-icon"></ion-icon></button>
+        </div>
+    </div>
+    <hr width="100%"  *ngIf="customFolder">
+    <document-list [folder]="type" [documents]="documents" *ngIf="documents.length"></document-list>
+    <div class="nothing-found-wrapper" *ngIf="!documents.length && account_modificator==='User'">
+        <div class="nothing-found-content" *ngIf="!documentService.loading">
+            <img src="assets/img/icons/{{ noContentIcon }}.svg" alt="" class="input-icon">
+            <p>{{ noContentMessage }}</p>
+        </div>
+        <div class="nothing-found-content" *ngIf="documentService.loading">
+            <ion-spinner style="width: 50px;height: 50px;"></ion-spinner>
+        </div>
+    </div>
+    <div class="nothing-found-wrapper-accounts" *ngIf="!documents.length && account_modificator!=='User'&& active===true && first_letter_received===true ">
+        <div class="nothing-found-content-accounts" *ngIf="!documentService.loading">
+            <img src="assets/img/icons/{{ noContentIcon }}.svg" alt="" class="input-icon">
+            <p>{{ noContentMessage }}</p>
+        </div>
+        <div class="nothing-found-content-accounts" *ngIf="documentService.loading">
+            <ion-spinner style="width: 50px;height: 50px;"></ion-spinner>
+        </div>
+    </div>
+    <div class="nothing-found-tutorial" *ngIf="!documents.length && active===false && first_letter_received===false && account_modificator==='PostfachAccount'">
+        <div class="tutorial">
+            {{ 'general.menu.postfach.firstSection' | translate }}
+        </div>
+        <div class="tutorial">
+            {{ 'general.menu.postfach.secondSection' | translate }}
+        </div>
+            <button ion-button color="green" (click)="upgrade($event)" full style="border-radius: 25px"  *ngIf="currentUser.registrationState!=='complete'">Jetzt starten</button>
+    </div>
+    <div class="nothing-found-tutorial" *ngIf="!documents.length && first_letter_received===false && active===true && account_modificator==='PostfachAccount'">
+        <div class="tutorial">
+            <div class="activated">{{ 'general.menu.postfach.firstSection' | translate }}</div>
+            <div class="activated" style=" border: 1px solid lightgrey; border-radius: 7px; text-align: center;">
+                <br>
+                Digitalkasten#{{letter_address}}<br>
+                Bessemerstraße 83-91, 12103, Berlin
+                <br>
+            </div>
+        </div>
+        <div class="tutorial">
+            {{ 'general.menu.postfach.secondSection' | translate }}
+        </div>
+    </div>
+    <div class="nothing-found-tutorial" *ngIf="!documents.length && active===false && first_letter_received===false && account_modificator==='BulkscanAccount'">
+        <div class="tutorial">
+            {{ 'general.menu.bulkscan.firstSection' | translate }}
+        </div>
+        <div class="tutorial">
+            {{ 'general.menu.bulkscan.secondSection' | translate }}
+        </div>
+            <button ion-button color="green" (click)="upgrade($event)" full style="border-radius: 25px" *ngIf="currentUser.registrationState!=='complete'">Jetzt starten</button>
+    </div>
+    <div class="nothing-found-tutorial" *ngIf="!documents.length && active===true && first_letter_received===false && account_modificator==='BulkscanAccount'">
+        <div class="tutorial">
+            <div class="activated">{{ 'general.menu.bulkscan.firstSection' | translate }}</div>
+            <div class="activated" style=" border: 1px solid lightgrey; border-radius: 7px; text-align: center;">
+                <br>
+                Digitalkasten#{{letter_address}}<br>
+                Bessemerstraße 83-91, 12103, Berlin
+                <br>
+            </div>
+        </div>
+        <div class="tutorial">
+            {{ 'general.menu.bulkscan.secondSection' | translate }}
+        </div>
+    </div>
+</ion-content>

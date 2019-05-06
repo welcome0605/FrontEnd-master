@@ -1,0 +1,166 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title>
+      Jetzt durchstarten mit deinem Digitalkasten
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closeTapped()" icon-only>
+            <ion-icon name="close"></ion-icon>
+
+          </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding class="toc-modal-page">
+  <div class="full-width">
+    <!-- icons grid -->
+    <ion-grid>
+      <ion-row>
+        <div ion-col text-wrap text-center>
+
+          <img src="assets/img/check_icon.png" alt="" class="item-icon"> Erhalte deine Post jederzeit und überall per Smartphone-App
+        </div>
+
+        <div ion-col text-wrap text-center>
+          <img src="assets/img/search_icon.png" alt="" class="item-icon"> Durchsuche, archiviere und ordne deine Post digital
+          für mehr Überblick
+        </div>
+        <div ion-col text-wrap text-center>
+
+          <img src="assets/img/lock_icon.png" alt="" class="item-icon"> 100% anonym und sicher (Digitale Post made in Germany)
+        </div>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <!-- icons grid end-->
+
+  <div class="full-width" showWhen="android,ios">
+    <ion-slides pager="true">
+      <ion-slide *ngFor="let plan of signupPlans">
+        <ion-card class="plan-card">
+          <ion-card-header text-center>
+            <h1>{{ plan.marketingName }}</h1>
+          </ion-card-header>
+
+          <ion-list>
+            <button ion-button color="secondary" full (click)="selectPlan(plan.identifier)" style="border-radius: 25px">Jetzt starten</button>
+            <ion-item *ngFor="let item of plan.properties" [ngClass]="item.currentlyFree ?  'currently-free' : ''">
+              <ion-icon ios="ios-checkmark-circle" md="md-checkmark-circle" color="primary"></ion-icon>
+              <span class="item-name-wrapper">
+              <span class="item-name">
+                {{ item.name }}
+              </span>
+              </span>
+            </ion-item>
+            <button ion-button color="secondary" full (click)="selectPlan(plan.identifier)"  style="border-radius: 25px">Jetzt starten</button>
+          </ion-list>
+
+        </ion-card>
+      </ion-slide>
+
+    </ion-slides>
+  </div>
+  <div class="full-width" hideWhen="android,ios">
+    <ion-grid *ngIf="businessPlans">
+      <!--<ion-row justify-content-between>-->
+        <!--<ion-col *ngFor="let plan of signupPlans" col-md-6>-->
+          <!--<ion-card class="plan-card">-->
+            <!--<ion-card-header text-center>-->
+              <!--<h1>{{ plan.marketingName }}</h1>-->
+            <!--</ion-card-header>-->
+            <!--<ion-list>-->
+              <!--<button ion-button color="secondary" full (click)="selectPlan(plan.identifier)">Jetzt starten</button>-->
+
+              <!--<ion-item *ngFor="let item of plan.properties" [ngClass]="item.currentlyFree ?  'currently-free' : ''">-->
+                <!--<ion-icon ios="ios-checkmark-circle" md="md-checkmark-circle" color="primary"></ion-icon>-->
+                <!--<span class="item-name-wrapper">-->
+              <!--<span class="item-name">-->
+                <!--{{ item.name }}-->
+              <!--</span>-->
+                <!--</span>-->
+              <!--</ion-item>-->
+              <!--<button ion-button color="secondary" full (click)="selectPlan(plan.identifier)">Jetzt starten</button>-->
+            <!--</ion-list>-->
+          <!--</ion-card>-->
+        <!--</ion-col>-->
+      <!--</ion-row>-->
+      <ion-row justify-content-between>
+        <ion-col *ngFor="let plan of signupPlans">
+          <ion-card class="plan-card">
+            <ion-card-header text-center>
+              <h1>{{ plan.marketingName }}</h1>
+            </ion-card-header>
+            <ion-list>
+              <button ion-button color="secondary" full (click)="selectPlan(plan.identifier)">Jetzt starten</button>
+              <ion-item *ngFor="let item of plan.properties" [ngClass]="item.currentlyFree ?  'currently-free' : ''">
+                <ion-icon ios="ios-checkmark-circle" md="md-checkmark-circle" color="primary"  style="border-radius: 25px"></ion-icon>
+                <span class="item-name-wrapper">
+              <span class="item-name">
+                {{ item.name }}
+              </span>
+                </span>
+              </ion-item>
+              <button ion-button color="secondary" full (click)="selectPlan(plan.identifier)">Jetzt starten</button>
+            </ion-list>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid *ngIf="!businessPlans">
+      <ion-row justify-content-between>
+        <ion-col *ngFor="let plan of signupPlans">
+          <ion-card class="plan-card">
+            <ion-card-header text-center>
+              <h1>{{ plan.marketingName }}</h1>
+            </ion-card-header>
+            <ion-list>
+              <button ion-button color="secondary" full (click)="selectPlan(plan.identifier)">Jetzt starten</button>
+              <ion-item *ngFor="let item of plan.properties" [ngClass]="item.currentlyFree ?  'currently-free' : ''">
+                <ion-icon ios="ios-checkmark-circle" md="md-checkmark-circle" color="primary"  style="border-radius: 25px"></ion-icon>
+                <span class="item-name-wrapper">
+              <span class="item-name">
+                {{ item.name }}
+              </span>
+                </span>
+              </ion-item>
+              <button ion-button color="secondary" full (click)="selectPlan(plan.identifier)">Jetzt starten</button>
+            </ion-list>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div class="explantions-section">
+    <h2 style="margin-top: 30px;">{{ "So funktioniert's" | translate }}</h2>
+    <p style="margin: 0px auto 10px auto;">
+      <ion-icon ios="ios-checkmark-circle" md="md-checkmark-circle" color="primary"></ion-icon>
+      Nachdem du alle Funktionen in unserem Demoaccount getestet hast, brauchst du nur deine Zahlungsdaten einzugeben, damit wir
+      alle weiteren Schritte einleiten können!
+    </p>
+    <p>
+      <ion-icon ios="ios-checkmark-circle" md="md-checkmark-circle" color="primary"></ion-icon>
+      Anschließend richten wir dir einen Nachsendeauftrag für die von dir genannte Adresse ein, der zwischen drei und fünf Tagen
+      zur Aktivierung braucht, damit dein Post in unser Scancenter weitergeleitet wird.
+    </p>
+    <p>
+      <ion-icon ios="ios-checkmark-circle" md="md-checkmark-circle" color="primary"></ion-icon>
+      Sobald Post für dich eingeganen ist, erhältst du nun eine Benachrichtigung auf deinem Smartphone oder per Mail! Du kannst
+      nun jederzeit auf der ganzen Welt deine Post empfangen!
+    </p>
+
+  </div>
+
+
+  <!--<h2 style="margin-top: 30px;">Dein Digitalkasten rockt!</h2>-->
+
+  <h3 style="margin-top: 30px;">ISO-zertifiziertes, Deutsches Scancenter</h3>
+  <div class="partner-images">
+    <div class="partner-image" *ngFor="let img of logos; let i = index">
+      <!-- workaround until better images are delivered -->
+      <img src="assets/img/{{ img.url }}" *ngIf="i == 0"/>
+      <img src="assets/img/{{ img.url }}" style="margin-top: -6px; max-width: 93%" *ngIf="i == 1"/>
+      <img src="assets/img/{{ img.url }}" style="max-width: 80%" *ngIf="i == 2"/>
+    </div>
+  </div>
+</ion-content>

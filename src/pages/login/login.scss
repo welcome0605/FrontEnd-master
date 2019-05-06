@@ -1,0 +1,453 @@
+
+.login-content {
+	background-color: #fdb334;
+  background-image: url('../assets/img/mobile-bg-2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  padding: 20px 0px 10px 0px;
+
+	.scroll-content {
+		.login-box {
+			font-family: "Varela Round" !important;
+		}
+		background-color: rgba(253, 179, 52, 0.43);
+        transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+
+		.login-header {
+			width: 100%;
+
+			.login-button {
+				display: block;
+		    position: absolute;
+		    padding: 12px;
+		    top: -10px;
+		    right: -10px;
+				color: #fff;
+				text-transform: uppercase;
+				text-decoration: none;
+				font-size: 12px;
+				font-weight: 500;
+				letter-spacing: 2px;
+			}
+
+			.logo {
+
+			}
+    }
+		.list .item-input {
+			border-top: none;
+			border-bottom: 1px solid  #dedede;
+		}
+		*::-webkit-input-placeholder {
+			color: black;
+			padding-left: 17px;
+		}
+		*:-moz-placeholder {
+			/* FF 4-18 */
+			color: black;
+			padding-left: 17px;
+		}
+		*::-moz-placeholder {
+			/* FF 19+ */
+			color: black;
+			padding-left: 17px;
+		}
+		*:-ms-input-placeholder {
+			/* IE 10+ */
+			color: black;
+			padding-left: 17px;
+		}
+		input:focus::-webkit-input-placeholder {
+			color:transparent;
+		}
+		input:focus::-moz-placeholder {
+			color:transparent;
+		}
+		input:focus::-moz-placeholder {
+			color:transparent;
+		}
+		input:focus::-ms-input-placeholder {
+			color:transparent;
+		}
+
+		.slider-wrapper {
+			max-width: 500px;
+			max-width: 90%;
+    	margin: 0 auto;
+			padding-top: 20px;
+
+			.slider {
+				margin-bottom: 20px;
+			}
+
+			.slider-heading {
+				h1 {
+					color: #fff;
+					text-transform: uppercase;
+					text-align: center;
+					font-size: 22px;
+					font-weight: 400;
+					line-height: 1.4;
+				}
+
+				padding-bottom: 10px;
+			}
+
+			.slider-image {
+				max-width: 90%;
+			}
+
+			.slider-text {
+				color: white;
+				font-size: 14px;
+				text-align: left;
+				line-height: 1.4;
+				padding-top: 10px;
+				padding-bottom: 40px;
+			}
+		}
+
+		.cta-wrapper {
+			max-width: 500px;
+			max-width: 90%;
+			margin: 0 auto;
+
+			.cta-button {
+				border-radius: 5px;
+				padding: 24px 40px;
+				font-weight: bold;
+				box-shadow: none;
+				margin-bottom: 16px;
+				text-transform: uppercase;
+			}
+
+			.how-to-button {
+				border-radius: 5px;
+				border-color: white;
+				color: white;
+				padding: 24px 40px;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+		}
+
+    .form-wrapper {
+    	max-width: 500px;
+    	margin: 0 auto;
+    	padding-top: 100px;
+
+    	button {
+    		text-transform: uppercase;
+    	}
+    }
+	}
+
+
+	#touch-menu {
+	  display: block;
+	  cursor: pointer;
+	  background: transparent;
+	  width: 61px;
+	  height: 52px;
+	  margin: 0;
+	  padding: 12px;
+	  top: -12px;
+	  left: -6px;
+	  position: absolute;
+	  z-index: 999;
+	  transition: none;
+
+	  display: none;
+
+		span, span:after, span:before {
+	    width: 100%;
+	    height: 3px;
+	    background-color: #ffffff;
+	    transition: all 0.3s;
+	    backface-visibility: hidden;
+	    border-radius: 2px;
+		}
+
+		span:after, span:before {
+	    content: "";
+	    position: absolute;
+	    left: 0;
+	    top: -9px;
+		}
+
+		span {
+	    position: relative;
+	    display: block;
+	    top: 12px;
+		}
+
+		span:after {
+		   top: 9px;
+		}
+	}
+
+
+	.submit-btn {
+		border-radius: 25px;
+		padding: 24px 40px;
+		font-weight: bold;
+		box-shadow: none;
+	}
+
+	.forget-btn, .register-btn {
+		font-weight: 500;
+		letter-spacing: 1px;
+	}
+	ion-icon {
+		&[class*="custom-"] {
+			mask-size: contain;
+			mask-position: 50% 50%;
+			mask-repeat: no-repeat;
+			background: currentColor;
+			width: 1em;
+			height: 1em;
+			margin-left: 15px;
+
+		}
+		&[class*="custom-password-icon"] {
+			mask-image: url(../assets/img/icons/password.svg);
+		}
+		&[class*="custom-user-icon"] {
+			mask-image: url(../assets/img/icons/user.svg);
+		}
+	}
+	.list .item-block .item-inner {
+		border-bottom: none;
+	}
+
+	#email{
+		background-image:url("../assets/img/icons/user.svg");
+		background-size: 20px;
+		background-repeat:no-repeat;
+		background-position: bottom 15px left;
+	}
+	#password{
+		background-image:url("../assets/img/icons/password.svg");
+		background-size: 20px;
+		background-repeat:no-repeat;
+		background-position: bottom 15px left;
+
+	}
+	input { text-indent:10%; }
+	input:focus { text-indent:8%;}
+}
+
+@media only screen and (max-width: 799px){
+	.login-content {
+		background-color: #fdb334;
+		background-image: url('../assets/img/mobile-bg-2.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+		padding: 20px 0px 10px 0px;
+
+		ion-list {
+			background: #ffffff;
+			height: 165px;
+			border-radius: 13px;
+			padding-top: 30px;
+
+		}
+		ion-item {
+			box-shadow: none;
+		}
+		ion-list {
+			padding-left: 32px;
+			padding-right: 32px;
+		}
+		.scroll-content {
+			background-color: rgba(253, 179, 52, 0.43);
+			transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+			::-webkit-input-placeholder {text-indent:10px!important;}
+			:-moz-placeholder { text-indent:10px!important;}
+			::-moz-placeholder {text-indent:10px!important;}
+			:-ms-input-placeholder {text-indent:10px!important;}
+			input:focus::-webkit-input-placeholder {
+				text-indent:10px!important;
+			}
+			input:focus::-moz-placeholder {
+				text-indent:10px!important;
+			}
+			input:focus::-moz-placeholder {
+				text-indent:10px!important;
+			}
+			input:focus::-ms-input-placeholder {
+				text-indent:10px!important;
+			}
+			.login-header {
+				width: 100%;
+
+				.login-button {
+					display: block;
+					position: absolute;
+					padding: 12px;
+					top: -10px;
+					right: -10px;
+					color: #fff;
+					text-transform: uppercase;
+					text-decoration: none;
+					font-size: 12px;
+					font-weight: 500;
+					letter-spacing: 2px;
+				}
+
+				.logo {
+
+				}
+			}
+
+			.slider-wrapper {
+				max-width: 500px;
+				max-width: 90%;
+				margin: 0 auto;
+				padding-top: 20px;
+
+				.slider {
+					margin-bottom: 20px;
+				}
+
+				.slider-heading {
+					h1 {
+						color: #fff;
+						text-transform: uppercase;
+						text-align: center;
+						font-size: 22px;
+						font-weight: 400;
+						line-height: 1.4;
+					}
+
+					padding-bottom: 10px;
+				}
+
+				.slider-image {
+					max-width: 90%;
+				}
+
+				.slider-text {
+					color: white;
+					font-size: 14px;
+					text-align: left;
+					line-height: 1.4;
+					padding-top: 10px;
+					padding-bottom: 40px;
+				}
+			}
+
+			.cta-wrapper {
+				max-width: 500px;
+				max-width: 90%;
+				margin: 0 auto;
+
+				.cta-button {
+					border-radius: 5px;
+					padding: 24px 40px;
+					font-weight: bold;
+					box-shadow: none;
+					margin-bottom: 16px;
+					text-transform: uppercase;
+				}
+
+				.how-to-button {
+					border-radius: 5px;
+					border-color: white;
+					color: white;
+					padding: 24px 40px;
+					font-weight: bold;
+					text-transform: uppercase;
+				}
+			}
+
+			.form-wrapper {
+				max-width: 500px;
+				margin: 0 auto;
+				padding-top: 100px;
+
+				button {
+					text-transform: uppercase;
+				}
+			}
+		}
+
+
+		#touch-menu {
+			display: block;
+			cursor: pointer;
+			background: transparent;
+			width: 61px;
+			height: 52px;
+			margin: 0;
+			padding: 12px;
+			top: -12px;
+			left: -6px;
+			position: absolute;
+			z-index: 999;
+			transition: none;
+
+			display: none;
+
+			span, span:after, span:before {
+				width: 100%;
+				height: 3px;
+				background-color: #ffffff;
+				transition: all 0.3s;
+				backface-visibility: hidden;
+				border-radius: 2px;
+			}
+
+			span:after, span:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: -9px;
+			}
+
+			span {
+				position: relative;
+				display: block;
+				top: 12px;
+			}
+
+			span:after {
+				top: 9px;
+			}
+		}
+
+
+		.submit-btn {
+			border-radius: 25px;
+			padding: 24px 40px;
+			font-weight: bold;
+			box-shadow: none;
+		}
+
+		.forget-btn, .register-btn {
+			font-weight: 500;
+			letter-spacing: 1px;
+		}
+		ion-icon {
+			&[class*="custom-"] {
+				mask-size: contain;
+				mask-position: 50% 50%;
+				mask-repeat: no-repeat;
+				background: currentColor;
+				width: 1em;
+				height: 1em;
+				margin-left: 15px;
+
+			}
+			&[class*="custom-password-icon"] {
+				mask-image: url("../assets/img/icons/password.svg");
+			}
+			&[class*="custom-user-icon"] {
+				mask-image: url("../assets/img/icons/user.svg");
+			}
+		}
+	}
+
+}

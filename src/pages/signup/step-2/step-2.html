@@ -1,0 +1,96 @@
+<ion-content style="background:#F5F5F5">
+  <div padding>
+    <div class="progress-wrapper" style="display:flex;">
+      <ion-icon [navPush]="toViewOne" name="arrow-back" style="padding-top: 11px; font-size: 26px; color:#888;"></ion-icon>
+      <div class="progress-chart">
+        <div [navPush]="toViewOne" class="step active">
+          <ion-icon name="md-home"></ion-icon>
+        </div>
+        <div class="line active"></div>
+        <div class="step active">
+          <ion-icon name="md-options"></ion-icon>
+        </div>
+        <div class="line"></div>
+        <div class="step">
+          <ion-icon name="md-card"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div padding>
+    <h4>{{ 'signup.plans.title' | translate }}</h4>
+  </div>
+  <div class="plans">
+    <div class="col-3 first">
+      <div class="plan-item" id="flexible-plan">
+        <h2>{{ 'signup.plans.option1.title' | translate }}</h2>
+        <ul>
+          <li><img src="assets/img/check.svg" width="20" height="20"><span>{{ 'signup.plans.option1.argument1' | translate }}</span></li>
+          <li><img src="assets/img/check.svg" width="20" height="20"><span>{{ 'signup.plans.option1.argument2' | translate }}</span></li>
+          <li><img src="assets/img/check.svg" width="20" height="20"><span>{{ 'signup.plans.option1.argument3' | translate }}</span></li>
+          <li><img src="assets/img/check.svg" width="20" height="20"><span>{{ 'signup.plans.option1.argument4' | translate }}</span></li>
+          <li><img src="assets/img/check.svg" width="20" height="20"><span>{{ 'signup.plans.option1.argument5' | translate }}</span></li>
+          <li><img src="assets/img/check.svg" width="20" height="20"><span>{{ 'signup.plans.option1.argument6' | translate }}</span></li>
+          <li><img src="assets/img/check.svg" width="20" height="20"><span>{{ 'signup.plans.option1.argument7' | translate }}</span></li>
+        </ul>
+        <div class="pricing">
+          <span class="price">24,90 EUR/{{ 'signup.plans.month' | translate }}</span>
+          <span class="setup">
+            {{ 'signup.plans.setupFee' | translate }}: 26,90 EUR
+          </span>
+        </div>
+        <div class="cta">
+          <button ion-button full (click)="setPlan('flexible_plan')">{{ 'signup.plans.select' | translate }}</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="plan-item" id="six-months-plan">
+        <h2>{{ 'signup.plans.option2.title' | translate }}</h2>
+        <ul>
+          <li><img src="assets/img/check.svg" width="20" height="20"><span>{{ 'signup.plans.option2.argument1' | translate }}</span></li>
+          <li><img src="assets/img/check.svg" width="20" height="20"><span>{{ 'signup.plans.option2.argument2' | translate }}</span></li>
+          <li><img src="assets/img/check.svg" width="20" height="20"><span>{{ 'signup.plans.option2.argument3' | translate }}</span></li>
+          <li><img src="assets/img/check.svg" width="20" height="20"><span>{{ 'signup.plans.option2.argument4' | translate }}</span></li>
+          <li><img src="assets/img/check.svg" width="20" height="20"><span>{{ 'signup.plans.option2.argument5' | translate }}</span></li>
+          <li><img src="assets/img/check.svg" width="20" height="20"><span>{{ 'signup.plans.option2.argument6' | translate }}</span></li>
+          <li><img src="assets/img/check.svg" width="20" height="20"><span>{{ 'signup.plans.option2.argument7' | translate }}</span></li>
+          <li><img src="assets/img/check.svg" width="20" height="20"><span><strong>{{ 'signup.plans.option2.argument8' | translate }}</strong></span></li>
+        </ul>
+        <div class="pricing">
+          <span class="price">24,90 EUR/{{ 'signup.plans.month' | translate }}</span>
+          <span class="setup">
+            {{ 'signup.plans.setupFee' | translate }}: 0,00 EUR
+          </span>
+        </div>
+        <div class="cta">
+          <button ion-button full (click)="setPlan('6months_plan')">{{ 'signup.plans.select' | translate }}</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-3 last">
+      <div class="plan-item" id="twelve-months-plan">
+        <h2>{{ 'signup.plans.option3.title' | translate }}</h2>
+        <ul>
+          <li><img src="assets/img/check.svg" width="20" height="20"><span>{{ 'signup.plans.option3.argument1' | translate }}</span></li>
+          <li><img src="assets/img/check.svg" width="20" height="20"><span>{{ 'signup.plans.option3.argument2' | translate }}</span></li>
+          <li><img src="assets/img/check.svg" width="20" height="20"><span>{{ 'signup.plans.option3.argument3' | translate }}</span></li>
+          <li><img src="assets/img/check.svg" width="20" height="20"><span>{{ 'signup.plans.option3.argument4' | translate }}</span></li>
+          <li><img src="assets/img/check.svg" width="20" height="20"><span>{{ 'signup.plans.option3.argument5' | translate }}</span></li>
+          <li><img src="assets/img/check.svg" width="20" height="20"><span>{{ 'signup.plans.option3.argument6' | translate }}</span></li>
+          <li><img src="assets/img/check.svg" width="20" height="20"><span>{{ 'signup.plans.option3.argument7' | translate }}</span></li>
+          <li><img src="assets/img/check.svg" width="20" height="20"><span><strong>{{ 'signup.plans.option3.argument8' | translate }}</strong></span></li>
+        </ul>
+        <div class="pricing">
+          <span class="price">19,90 EUR/{{ 'signup.plans.month' | translate }}</span>
+          <span class="setup">
+            {{ 'signup.plans.setupFee' | translate }}: 0,00 EUR
+          </span>
+        </div>
+        <div class="cta">
+          <button ion-button full (click)="setPlan('12months_plan')">{{ 'signup.plans.select' | translate }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

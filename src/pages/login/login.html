@@ -1,0 +1,48 @@
+<ion-content class="login-content" padding>
+  <div style="max-width: 500px; margin:0 auto; padding-top: 100px;">
+    <div class="login-header">
+      <ion-row class="logo-row">
+        <ion-col>
+        <span id="touch-menu" class="mobile-menu">
+          <span></span>
+        </span>
+        </ion-col>
+        <ion-col style="text-align: center;">
+          <img class="logo" src="assets/img/digitalkasten-logo-white.png" width="175"  />
+        </ion-col>
+        <ion-col style="text-align: right;">
+          <!--<button ion-button clear id="login-button" class="login-button" (click)="showLoginForm()">Login</button>-->
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div class="login-box">
+      <form [formGroup]="loginForm" (ngSubmit)="login($event)" action="page1.html" novalidate>
+        <ion-row>
+          <ion-col>
+            <ion-list style="border-radius: 13px">
+              <ion-item>
+                <ion-input id="email" type="email" formControlName="email" required placeholder="{{ 'login.email' | translate }}"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input id="password" type="password" formControlName="password" required placeholder="{{ 'login.password' | translate }}"></ion-input>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col class="signup-col">
+            <button ion-button class="submit-btn" full color="green" round>{{ 'login.login' | translate }}</button>
+            <button style="color:#fff; font-size: 12px;" ion-button class="forget-btn" block clear [navPush]="forgetPassword" color="secondary">{{ 'login.forgetPassword' | translate }}</button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="signup-col">
+            <button style="color:#fff" ion-button class="register-btn" block clear [navPush]="pushPage" color="secondary">{{ 'login.newAccount' | translate }}</button>
+          </ion-col>
+        </ion-row>
+      </form>
+    </div>
+  </div>
+</ion-content>

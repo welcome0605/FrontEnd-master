@@ -1,0 +1,144 @@
+<ion-content style="background:#F5F5F5">
+  <div padding>
+    <div class="progress-wrapper" style="display:flex;">
+      <ion-icon [navPush]="toViewTwo" name="arrow-back" style="color:#888; padding-top: 11px; font-size: 26px;"></ion-icon>
+      <div class="progress-chart">
+        <div [navPush]="toViewOne" class="step active">
+          <ion-icon name="md-home"></ion-icon>
+        </div>
+        <div class="line active"></div>
+        <div [navPush]="toViewTwo" class="step active">
+          <ion-icon name="md-options"></ion-icon>
+        </div>
+        <div class="line active"></div>
+        <div class="step active">
+          <ion-icon name="md-card"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+  <form [formGroup]="selectPayment" class="paymentSelect">
+    <ion-list>
+      <ion-item>
+        <ion-label>{{ 'signup.step2.paymentMethod' | translate }}</ion-label>
+        <ion-select formControlName="payment">
+          <ion-option value="directdebit" selected="true">{{ 'signup.step2.directdebit' | translate }}</ion-option>
+          <ion-option value="creditcard">{{ 'signup.step2.creditcard' | translate }}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </form>
+  <div *ngIf="selectPayment.value.payment == 'creditcard'">
+    <div padding>
+      <h4>{{ 'signup.step2.title_credit_card' | translate }}</h4>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="formSubmitted($event)" novalidate>
+      <ion-list>
+        <ion-item>
+          <ion-input type="number" placeholder="{{ 'signup.step2.cardNumber' | translate }}" autocomplete="on" formControlName="number" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" placeholder="{{ 'signup.step2.cardHolder' | translate }}" autocomplete="on" formControlName="holder" required></ion-input>
+        </ion-item>
+        <ion-item>
+         <ion-select placeholder="MM" autocomplete="on" formControlName="exp_month">
+           <ion-option value="01">01</ion-option>
+           <ion-option value="02">02</ion-option>
+           <ion-option value="03">03</ion-option>
+           <ion-option value="04">04</ion-option>
+           <ion-option value="05">05</ion-option>
+           <ion-option value="06">06</ion-option>
+           <ion-option value="07">07</ion-option>
+           <ion-option value="08">08</ion-option>
+           <ion-option value="09">09</ion-option>
+           <ion-option value="10">10</ion-option>
+           <ion-option value="11">11</ion-option>
+           <ion-option value="12">12</ion-option>
+         </ion-select>
+         <ion-select placeholder="YYYY" autocomplete="on" formControlName="exp_year">
+           <ion-option>2017</ion-option>
+           <ion-option>2018</ion-option>
+           <ion-option>2019</ion-option>
+           <ion-option>2020</ion-option>
+           <ion-option>2021</ion-option>
+           <ion-option>2022</ion-option>
+         </ion-select>
+       </ion-item>
+       <ion-item>
+         <ion-input type="text" placeholder="{{ 'signup.step2.cvv' | translate }}" type="number" formControlName="cvc" required></ion-input>
+       </ion-item>
+      </ion-list>
+      <div padding>
+        <div class="argument">
+          <div>
+            <ion-icon name="md-checkmark-circle"></ion-icon>
+            <span class="argument-label">{{ 'signup.step2.argument1' | translate }}</span>
+          </div>
+          <div>
+            <ion-icon name="md-checkmark-circle"></ion-icon>
+            <span class="argument-label">{{ 'signup.step2.argument2' | translate }}</span>
+          </div>
+          <div>
+            <ion-icon name="md-checkmark-circle"></ion-icon>
+            <span class="argument-label">{{ 'signup.step2.argument3' | translate }}</span>
+          </div>
+          <div>
+            <ion-icon name="md-checkmark-circle"></ion-icon>
+            <span class="argument-label">{{ 'signup.step2.argument4' | translate }}</span>
+          </div>
+        </div>
+      </div>
+      <div padding>
+        <button ion-button full type="submit">{{ 'general.continue' | translate }}</button>
+      </div>
+    </form>
+  </div>
+  <div *ngIf="selectPayment.value.payment == 'directdebit'">
+    <div padding>
+      <h4>{{ 'signup.step2.title_direct_debit' | translate }}</h4>
+    </div>
+    <form [formGroup]="debitForm" (ngSubmit)="formSubmitted($event)" novalidate>
+      <ion-list>
+        <ion-item>
+          <ion-input type="text" placeholder="{{ 'signup.step2.accountHolderName' | translate }}" autocomplete="on" formControlName="account_holder_name" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" placeholder="{{ 'signup.step2.accountNumber' | translate }}" autocomplete="on" formControlName="account_number" required></ion-input>
+        </ion-item>
+      </ion-list>
+      <div padding>
+        <div class="argument">
+          <div>
+            <ion-icon name="md-checkmark-circle"></ion-icon>
+            <span class="argument-label">{{ 'signup.step2.argument1' | translate }}</span>
+          </div>
+          <div>
+            <ion-icon name="md-checkmark-circle"></ion-icon>
+            <span class="argument-label">{{ 'signup.step2.argument2' | translate }}</span>
+          </div>
+          <div>
+            <ion-icon name="md-checkmark-circle"></ion-icon>
+            <span class="argument-label">{{ 'signup.step2.argument3' | translate }}</span>
+          </div>
+          <div>
+            <ion-icon name="md-checkmark-circle"></ion-icon>
+            <span class="argument-label">{{ 'signup.step2.argument4' | translate }}</span>
+          </div>
+        </div>
+      </div>
+      <div padding>
+        <button ion-button full type="submit">{{ 'signup.step3.signup' | translate }}</button>
+      </div>
+    </form>
+  </div>
+  <div *ngIf="errors.length">
+    <div padding>
+      <h4>Fehler in der Registrierung</h4>
+    </div>
+    <ion-list>
+      <ion-item *ngFor="let error of errors" color="danger" style="color: #fff;">
+        {{ error }}
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

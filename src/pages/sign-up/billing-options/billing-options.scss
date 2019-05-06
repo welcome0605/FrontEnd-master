@@ -1,0 +1,51 @@
+page-billing-options {
+  .progress-wrapper {
+    display: flex;
+    
+    .button {
+      position: absolute;
+      color: #888;
+      font-size: 2.0rem;
+
+    }
+
+  }
+  .scroll-content {
+    background: #EEEEEE;
+      .list {
+        box-shadow: none;
+    }
+  }
+  .method {
+    margin-top: 20px!important;
+  }
+
+  ion-list.list.points {
+    box-shadow: none;
+    
+    ion-item {
+      background-color: transparent;
+      ion-label{
+        white-space: initial;
+      }
+      .item-inner {
+        border: none;
+
+      }
+
+    }
+
+  }
+
+  .errors {
+    ion-list {
+      ion-item {
+        color: #fff;
+
+      }
+
+    }
+
+  }
+
+}

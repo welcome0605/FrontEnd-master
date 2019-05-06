@@ -1,0 +1,29 @@
+{
+  "rules": {
+    "no-duplicate-variable": [true, "check-parameters"],
+    "no-unused-variable": [
+      true
+    ],
+    "no-var-keyword": true,
+    "curly": true,
+    "import-spacing": true,
+    "indent":  {
+        "options": ["spaces"]
+    },
+   "semicolon": {
+        "options": ["always"]
+    },
+    "no-unused-expression": true,
+    "jsdoc-format": true,
+    "label-position": true
+  },
+  "rulesDirectory": [
+    "node_modules/tslint-eslint-rules/dist/rules"
+  ],
+  "defaultSeverity": "error",
+  "jsRules": {
+        "max-line-length": {
+            "options": [120]
+    }
+  }
+}

@@ -1,0 +1,119 @@
+<ion-content style="background:#F5F5F5">
+  <div padding>
+    <div class="progress-wrapper" style="display:flex;">
+      <ion-icon [navPush]="goToLogin" name="arrow-back" style="padding-top: 11px; font-size: 26px; color:#888;"></ion-icon>
+      <div class="progress-chart">
+        <div class="step active">
+          <ion-icon name="md-home"></ion-icon>
+        </div>
+        <div class="line"></div>
+        <div class="step">
+          <ion-icon name="md-options"></ion-icon>
+        </div>
+        <div class="line"></div>
+        <div class="step">
+          <ion-icon name="md-card"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div padding>
+    <h4>{{ 'myData.currentAddress' | translate }}</h4>
+  </div>
+  <form [formGroup]="form" (ngSubmit)="formSubmitted($event)" novalidate id="signup-step1-form">
+    <ion-list class="customized" id="personal-info-section">
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'myData.firstname' | translate }}" autocomplete="on" formControlName="firstName" required stacked></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'myData.lastname' | translate }}" autocomplete="on" formControlName="lastName" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'myData.company' | translate }}" autocomplete="on" formControlName="company"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'myData.address' | translate }}" autocomplete="on" formControlName="address" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="number" placeholder="{{ 'myData.zip' | translate }}" required autocomplete="on" formControlName="zip"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'myData.city' | translate }}" required autocomplete="on" formControlName="city"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div padding style="padding: 16px 16px 4px 16px;">
+      <h4>{{ 'myData.mailDeliveryAddressHeading' | translate }}</h4>
+    </div>
+    <div padding style="padding: 5px 16px 16px 16px;">
+      <button (click)="copyAddress($event)" ion-button id="copy-address-btn"> {{ 'myData.copyFromAddress' | translate }}</button>
+    </div>
+    <ion-list class="customized" id="mail-info-section">
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'myData.mailDeliveryFirstname' | translate }}" autocomplete="on" formControlName="mailDeliveryFirstName" required stacked></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'myData.mailDeliveryLastname' | translate }}" autocomplete="on" formControlName="mailDeliveryLastName" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'myData.mailDeliveryCompany' | translate }}" autocomplete="on" formControlName="mailDeliveryCompany"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'myData.mailDeliveryAddress' | translate }}" autocomplete="on" formControlName="mailDeliveryAddress" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="number" placeholder="{{ 'myData.mailDeliveryZip' | translate }}" required autocomplete="on" formControlName="mailDeliveryZip"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'myData.mailDeliveryCity' | translate }}" required autocomplete="on" formControlName="mailDeliveryCity"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div padding>
+      <h4>{{ 'myData.yourAccount' | translate }}</h4>
+    </div>
+    <div style="box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);" id="credentials-section">
+      
+      <ion-list class="customized" formGroupName="emails" style="margin-bottom: 0 !important;padding-bottom: 0;box-shadow: none;" >
+        <ion-item>
+          <ion-input type="email" placeholder="{{ 'myData.email' | translate }}" autocomplete="on" formControlName="email" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="email" placeholder="{{ 'myData.repeatEmail' | translate }}" autocomplete="on" formControlName="emailConfirmation" required></ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-list class="customized" formGroupName="passwords" style="margin-top: 0 !important;padding-top: 0;box-shadow: none;">
+        <ion-item>
+          <ion-input type="password" placeholder="{{ 'myData.password' | translate }}" autocomplete="on" formControlName="password" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="password" placeholder="{{ 'myData.repeatPassword' | translate }}" autocomplete="on" formControlName="passwordConfirmation" required></ion-input>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div padding>
+      <h4>{{ 'myData.acceptTerms' | translate }}</h4>
+    </div>
+    <ion-list id="terms-section">
+      <ion-item text-wrap>
+        <ion-label>{{ 'signup.step3.termsAndConditions' | translate }}</ion-label>
+        <!-- formControlName="checkedTermsAndConditions" -->
+        <ion-checkbox formControlName="checkedTermsAndConditions"></ion-checkbox>
+      </ion-item>
+      <!-- <ion-item>
+        <ion-label>{{ 'signup.step3.redirectMail' | translate }}</ion-label>
+        <ion-checkbox formControlName="permissionToRedirectMail" (click)="provideSignatureModal($event)"></ion-checkbox>
+      </ion-item> -->
+    </ion-list>
+    <p class="show-details"><span (click)="acceptTermsAndConditions($event)">{{ 'signup.step3.showTermsAndConditions' | translate }}</span></p>
+    <ion-list id="privacy-policy-section">
+      <ion-item text-wrap>
+        <ion-label>{{ 'signup.step3.privacyPolicy' | translate }}</ion-label>
+        <ion-checkbox formControlName="checkedPrivacyPolicy"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+    <p class="show-details"><span (click)="acceptPrivacyPolicy($event)">{{ 'signup.step3.showPrivacyPolicy' | translate }}</span></p>
+    <!--<div padding style="padding-top:0px;">{{ 'myData.passwordNeeds' | translate }}</div>-->
+    <div padding>
+      <button ion-button full type="submit">{{ 'general.continue' | translate }}</button>
+    </div>
+  </form>
+</ion-content>

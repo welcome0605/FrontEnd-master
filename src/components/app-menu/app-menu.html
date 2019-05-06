@@ -1,0 +1,66 @@
+<ion-list class="main-menu">
+
+
+
+  <button [hidden]="folder.account_modificator !== 'User' && folder.slug =='inbox'" *ngFor="let folder of folders.system" menuClose ion-item  (click)="openPageByIdentifier('Inbox', {type: folder.type, account_modificator: folder.account_modificator, slug: folder.slug})" [ngClass]="{'active': isActive(folder.slug)}">
+    <ion-icon  name="custom-{{ folder.icon }}-icon" item-left></ion-icon>
+
+    <ion-label  *ngIf="folder.account_modificator === 'User'">
+      {{ 'general.menu.' + folder.slug | translate }}
+    </ion-label>
+
+
+    <ion-label *ngIf="folder.account_modificator !== 'User' && folder.slug =='inbox'">
+      {{ 'general.menu.' + folder.account_modificator | translate }}
+    </ion-label>
+    <ion-badge item-right color="green" *ngIf="documentService.counts.folders[folder.slug]" style="border-radius: 13px; width:20%; height:50%;">
+      {{ documentService.counts.folders[folder.slug] }}
+    </ion-badge>
+    <ion-toggle color="secondary" checked="false" [(ngModel)]="toggle" (ionChange)="onToggle($event)" (click)="onStopTogglePropagation($event)" *ngIf="userService.canCompleteSignup() && folder.slug == 'inbox' && folder.account_modificator === 'User'"></ion-toggle>
+  </button>
+
+
+
+
+
+
+
+
+
+
+
+  <ion-item-divider>
+    {{ 'general.menu.customFolders' | translate }}
+  </ion-item-divider>
+
+  <div *ngIf="folders.custom" class="folder-list">
+    <button *ngFor="let folder of folders.custom" menuClose ion-item (click)="openPageByIdentifier('Inbox', {type: folder.slug, folder: folder, account_modificator: folder.account_modificator, slug: folder.slug})" [ngClass]="{'active': isActive(folder.slug)}" class="folder" style="border:none">
+      <ion-icon name="custom-folder-icon" item-left></ion-icon>
+        {{ folder.title }}
+        <ion-badge item-right color="green" *ngIf="documentService.counts.folders[folder.slug]" style="border-radius: 13px; width:20%; height:50%;">{{ documentService.counts.folders[folder.slug] }}</ion-badge>
+    </button>
+  </div>
+  <div class="createFolder" (click)="createFolder()" *ngIf="folders?.custom">
+    <ion-icon name="add"></ion-icon>
+    <span>{{ 'general.menu.addFolder' | translate }}</span>
+  </div>
+
+  <ion-item-divider>{{ 'general.menu.archive' | translate }}</ion-item-divider>
+  <button menuClose ion-item (click)="openPageByIdentifier('Inbox', {type: archive.key })" [ngClass]="{'active': isActive(archive.key)}" *ngFor="let archive of documentService.archive | keys">
+    {{ archive.value.name }}
+    <ion-badge item-right color="green" *ngIf="documentService.counts.months[archive.value.month]" style="border-radius: 13px; width:20%; height:50%;">{{ documentService.counts.months[archive.value.month] }}</ion-badge>
+  </button>
+  <ion-item-divider>{{ 'general.menu.account' | translate }}</ion-item-divider>
+  <button menuClose ion-item (click)="openPageByIdentifier('MyData')" [ngClass]="{'active': isActive('MyData')}">
+    <ion-icon name="custom-user-icon" item-left></ion-icon>
+        <ion-label>
+            {{ 'general.menu.myData' | translate }}
+        </ion-label>
+  </button>
+  <div id="footer">
+  </div>
+</ion-list>
+<!-- <ion-note padding>{{ 'general.menu.nextSendDate' | translate }} {{ user.nextMailDeliveryAt | date }} </ion-note>
+<div padding>
+  <button ion-button (click)="sendLetters()" color="secondary">{{ 'general.menu.sendButton' | translate }}</button>
+</div> -->

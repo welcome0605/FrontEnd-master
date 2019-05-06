@@ -1,0 +1,8 @@
+{
+  "name": "digitalkasten",
+  "app_id": "44a8c582",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

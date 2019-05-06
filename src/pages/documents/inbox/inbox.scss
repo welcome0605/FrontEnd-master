@@ -1,0 +1,148 @@
+ page-inbox {
+   .inbox {
+      font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    }
+    ion-content {
+      &.has-refresher > .scroll-content {
+
+        /* fix for issue with dissapearing scrollbar on resfresh*/
+
+        /* overflow-y: scroll !important;*/
+
+        /* to make content static*/
+
+        /* transform: translateY(0) !important;*/
+        border: none;
+      }
+
+      &.content-search {
+
+      }
+
+      /* fix for issue with dissapearing scrollbar on refresh*/
+
+      /* ion-refresher {*/
+
+      /*   z-index: 100;*/
+
+      /*} */
+      .input-icon {
+        width: 40%;
+        height: 40%;
+      }
+
+      p{
+        padding: 0px 0px 0px 10px;
+
+      }
+
+
+    }
+    ion-header {
+      .user-referral-banner {
+        background-color: #FFB41A;
+        font-size: 15px;
+        color: #ffffff;
+      }
+
+      .referral-link {
+        color: #ffffff;
+        width: 100%;
+      }
+
+      .refferal-banner-button {
+        padding-top: 12px;
+        box-shadow: none;
+      }
+
+      ion-navbar {
+        ion-searchbar{
+          -webkit-border-radius: 13px;
+          -moz-border-radius: 13px;
+          border-radius: 13px;
+        }
+      }
+    }
+  }
+ ion-searchbar{
+   -webkit-border-radius: 13px;
+   -moz-border-radius: 13px;
+   border-radius: 13px;
+ }
+@media (min-width: 750px) {
+    page-inbox {
+      ion-header {
+        .referral-link {
+          width: 100%;
+          font-size: 18px;
+        }
+
+      }
+    }
+  }
+ .desktop-search {
+   -webkit-border-radius: 13px;
+   -moz-border-radius: 13px;
+   border-radius: 13px;
+ }
+
+ion-nav.menu-content * {font-family: Helvetica, Sans-Serif !important; }
+@media only screen and (max-width: 799px){
+  page-inbox {
+    &.has-refresher > .scroll-content {
+      border: none;
+    }
+    .searchbar-md .searchbar-input{
+      -webkit-border-radius: 13px;
+      -moz-border-radius: 13px;
+      border-radius: 13px;
+      box-shadow:none;
+    }
+    .content {
+      background-color: #F1F3F4;
+    }
+    .input-icon {
+      width: 60%;
+      height: 60%;
+    }
+    .user-referral-banner {
+      background-color: #FFB41A;
+      color: #ffffff;
+    }
+    .refferal-banner-button {
+      padding-top: 12px;
+      box-shadow: none;
+    }
+    .searchbar{
+      background-color: #F1F3F4;
+      border: none;
+    }
+  }
+}
+
+ ion-icon {
+   &[class*="custom-"] {
+     mask-size: contain;
+     mask-position: 50% 50%;
+     mask-repeat: no-repeat;
+     background: currentColor;
+     width: 1em;
+     height: 1em;
+   }
+   &[class*="custom-trash-icon"] {
+     mask-image: url(../assets/img/icons/trash.svg);
+   }
+   &[class*="custom-edit-icon"] {
+     mask-image: url(../assets/img/icons/edit-white.svg);
+   }
+ }
+ .postfach-header{
+   text-align:center;
+   width:100%;
+   margin-top:0!important;
+ }
+ .bulkscan-header{
+   text-align:center;
+   width:100%;
+   margin-top:0!important;
+ }

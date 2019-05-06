@@ -1,0 +1,103 @@
+<ion-content padding>
+    <ion-grid>
+        <div text-center>
+            <h1>{{ 'signUp.userPaymentTutorial.title' | translate }}</h1>
+        </div>
+        <ion-row>
+            <ion-slides ion-slides #slider (ionDrag)="onIonDrag($event)">
+                <ion-slide>
+                    <ion-card class="cards">
+                        <ion-card-header>
+                            <div text-center>
+                                <img src="assets/img/user-tutorial-1.png" class="full-image">
+                            </div>
+                        </ion-card-header>
+
+                        <ion-card-content>
+                            <div class="list">
+                                <ul>
+                                    <li>{{ 'signUp.userPaymentTutorial.step1.first' | translate }}</li>
+                                    <li>{{ 'signUp.userPaymentTutorial.step1.second' | translate }}</li>
+                                    <li>{{ 'signUp.userPaymentTutorial.step1.third' | translate }}</li>
+                                    <br>
+                                </ul>
+                            </div>
+                        </ion-card-content>
+                    </ion-card>
+                </ion-slide>
+                <ion-slide>
+                    <ion-card class="cards">
+                        <ion-card-header>
+                            <div text-center>
+                                <img src="assets/img/user-tutorial-2.png" class="full-image">
+                            </div>
+                        </ion-card-header>
+
+                        <ion-card-content>
+                            <div class="list">
+                                <ul>
+                                    <li>{{ 'signUp.userPaymentTutorial.step2.first' | translate }}</li>
+                                    <li>{{ 'signUp.userPaymentTutorial.step2.second' | translate }}</li>
+                                    <br>
+                                </ul>
+                            </div>
+                        </ion-card-content>
+                    </ion-card>
+                </ion-slide>
+                <ion-slide>
+                    <ion-card class="cards">
+                        <ion-card-header>
+                            <div text-center>
+                                <img src="assets/img/user-tutorial-3.png" class="full-image">
+                            </div>
+                        </ion-card-header>
+
+                        <ion-card-content>
+                            <div class="list">
+                                <ul>
+                                    <li>{{ 'signUp.userPaymentTutorial.step3.first' | translate }}</li>
+                                    <li>{{ 'signUp.userPaymentTutorial.step3.second' | translate }}</li>
+                                    <li>{{ 'signUp.userPaymentTutorial.step3.third' | translate }} <b>{{ 'signUp.userPaymentTutorial.step3.mail' | translate }}</b> {{ 'signUp.userPaymentTutorial.step3.end' | translate }} <b>{{ 'signUp.userPaymentTutorial.step3.phone' | translate }}</b>.</li>
+                                </ul>
+                            </div>
+                        </ion-card-content>
+                    </ion-card>
+                </ion-slide>
+                <ion-slide style = "margin-top: 50px;">
+                    <ion-card class="cards" style="background: none; border:none; box-shadow: none">
+                        <ion-card-header>
+                        </ion-card-header>
+
+                        <ion-card-content>
+                            <ion-row>
+                                <br>
+                                <br>
+                                <ion-col col></ion-col>
+                                <ion-col col-sm-8 col-md-6>
+                                    <button ion-button color="#4267b2" class="fb-button">
+                                        <div class="fb-share-button" data-href="https://digitalkasten.de/" data-layout="button_count" data-size="large" data-mobile-iframe="true">
+                                            <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.digitalkasten.de%2F&amp;src=sdkpreparse">Mit Freunden auf Facebook teilen</a>
+                                        </div>
+                                    </button>
+                                    <button ion-button class="submit-button">{{ 'signUp.userPaymentTutorial.referral_button' | translate }}</button>
+                                    <button ion-button (click)="onRedirect()" class="submit-button">{{ 'signUp.registrationSuccess.login' | translate }}</button>
+                                </ion-col>
+                                <ion-col col></ion-col>
+                            </ion-row>
+                        </ion-card-content>
+                    </ion-card>
+                </ion-slide>
+            </ion-slides>
+       </ion-row>
+        <ion-row id="footer">
+            <span style="text-align:left" class="col col-50">
+                <ion-icon name="arrow-round-back" text-left (click)="slidePrevious()" *ngIf="!ifSlideFirst()" ></ion-icon>
+                 <button outline (click)="slidePrevious()"style="font-size: large" *ngIf="!ifSlideFirst()">Zurück</button>
+            </span>
+            <span style="text-align:right" class="col col-50">
+                <button outline (click)="slideNext()"style="font-size: large" *ngIf="!ifSlideLast()">Weiter</button>
+                <ion-icon name="arrow-round-forward" text-left (click)="slideNext()" *ngIf="!ifSlideLast()"></ion-icon>
+            </span>
+        </ion-row>
+    </ion-grid>
+</ion-content>

@@ -1,0 +1,250 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ 'fullSignup.topBar' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-grid>
+        <ion-row>
+            <div class="ion-col">
+                <p class="header-text">{{'fullSignup.header' | translate }}</p>
+            </div>
+        </ion-row>
+        <div ion-row>
+            <ion-col col-md-4 col-12 col-xs-12 hideWhen="android,ios" *ngIf="billingPlan">
+                <div class="plan-details-wrapper">
+                    <div class="header">
+                        {{billingPlan.marketingName }}
+                    </div>
+                    <ul class="feature-list" style = " border-bottom-left-radius: 7px; border-bottom-right-radius: 7px;">
+                        <li *ngFor="let item of billingPlan?.properties" [ngClass]="item.currentlyFree ?  'currently-free' : ''">
+                            <ion-icon ios="ios-checkmark-circle" md="md-checkmark-circle" color="primary"></ion-icon> 
+                            <span class="item-name-wrapper">
+                              <span class="item-name">
+                                {{ item.name }}
+                              </span>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+            </ion-col>
+
+            <ion-col col-md-8 col-12 col-xs-12>
+                <!-- righ card -->
+                <ion-list padding class="form-container" style="background:white; border-radius: 7px; ">
+                    <form novalidate [formGroup]="registerForm" (ngSubmit)="register($event)" id="full-signup-form">
+                        <h2>{{"fullSignup.steps.header1" | translate}}</h2>
+                        <div class="form-section" formGroupName="userForm" (keyup)="checkUserForm(4)">
+                            <ion-grid>
+                                <ion-row formGroupName="emails">
+                                    <ion-col col-12 col-xs-12 col-lg-6>
+                                        <ion-item>
+                                            <ion-input stacked type="email" placeholder="{{ 'myData.email' | translate }}" autocomplete="email" formControlName="email"
+                                                required></ion-input>
+                                        </ion-item>
+
+                                    </ion-col>
+                                    <ion-col col-12 col-xs-12 col-lg-6>
+                                        <ion-item>
+
+                                            <ion-input stacked type="email" placeholder="{{ 'myData.repeatEmail' | translate }}" autocomplete="email" formControlName="emailConfirmation"
+                                                required></ion-input>
+                                        </ion-item>
+                                    </ion-col>
+                                </ion-row>
+                                <ion-row formGroupName="passwords">
+                                    <ion-col col-12 col-xs-12 col-lg-6>
+                                        <ion-item>
+                                            <ion-input stacked type="password" placeholder="{{ 'myData.password' | translate }}" autocomplete="on" formControlName="password"
+                                                required></ion-input>
+                                        </ion-item>
+                                    </ion-col>
+                                    <ion-col col-12 col-xs-12 col-lg-6>
+                                        <ion-item>
+                                            <ion-input type="password" placeholder="{{ 'myData.repeatPassword' | translate }}" autocomplete="on" formControlName="passwordConfirmation"
+                                                required></ion-input>
+                                        </ion-item>
+
+                                    </ion-col>
+                                </ion-row>
+                            </ion-grid>
+                        </div>
+                        <div class="form-section" formGroupName="addressForm" (keyup)="checkUserForm(4)">
+                            <h2>{{"fullSignup.steps.header2" | translate}}</h2>
+                            <ion-grid>
+                                <ion-row>
+                                    <ion-col col-lg-6 col-12 col-xs-12>
+                                        <ion-item>
+                                            <ion-input type="text" placeholder="{{ 'myData.firstname' | translate }}" autocomplete="name" formControlName="firstName"
+                                                required stacked></ion-input>
+                                        </ion-item>
+                                    </ion-col>
+                                    <ion-col col-lg-6 col-12 col-xs-12>
+                                        <ion-item>
+
+                                            <ion-input type="text" placeholder="{{ 'myData.lastname' | translate }}" autocomplete="family-name" formControlName="lastName"
+                                                required></ion-input>
+                                        </ion-item>
+
+                                    </ion-col>
+                                </ion-row>
+                                <ion-row>
+                                    <ion-col col-lg-6 col-12 col-xs-12>
+                                        <ion-item>
+                                            <ion-input type="text" placeholder="{{ 'myData.company' | translate }}" autocomplete="on" formControlName="company"></ion-input>
+                                        </ion-item>
+
+                                    </ion-col>
+                                    <ion-col col-lg-6 col-12 col-xs-12>
+                                        <ion-item>
+                                            <ion-input type="text" placeholder="{{ 'myData.address' | translate }}" autocomplete="shipping street-address" formControlName="address"
+                                                required></ion-input>
+                                        </ion-item>
+
+                                    </ion-col>
+                                </ion-row>
+                                <ion-row>
+                                    <ion-col col-lg-6 col-12 col-xs-12>
+                                        <ion-item>
+                                            <ion-input autocomplete="shipping zip" type="number" placeholder="{{ 'myData.zip' | translate }}" required formControlName="zip"></ion-input>
+                                        </ion-item>
+                                    </ion-col>
+                                    <ion-col col-lg-6 col-12 col-xs-12>
+                                        <ion-item>
+                                            <ion-input type="text" placeholder="{{ 'myData.city' | translate }}" required autocomplete="shipping city" formControlName="city"></ion-input>
+                                        </ion-item>
+
+                                    </ion-col>
+                                </ion-row>
+                                <ion-row>
+                                    <ion-col col-lg-6 col-12 col-xs-12>
+                                        <ion-item>
+                                            <ion-input type="tel" placeholder="{{ 'myData.phone' | translate }}" formControlName="phone"></ion-input>
+                                        </ion-item>
+
+                                    </ion-col>
+                                </ion-row>
+                            </ion-grid>
+                        </div>
+                        <div class="form-section" formGroupName="paymentMethod" (keyup)="checkUserForm(5)">
+                            <h2>{{"fullSignup.steps.header3" | translate}}</h2>
+
+
+                            <div class="segment-wrapper" id="payment-toggle">
+                                <div [ngClass]="{'active': paymentForm.getMethod() === PAYMENT_METHOD_TYPE.BANK}" class="segment-item"
+                                    tappable (click)="paymentForm.setPaymentMethodType(PAYMENT_METHOD_TYPE.BANK)">
+                                    {{ 'fullSignup.bank' | translate}}
+                                </div>
+                                <div [ngClass]="{'active':  paymentForm.getMethod() === PAYMENT_METHOD_TYPE.CARD}" class="segment-item"
+                                    tappable (click)="paymentForm.setPaymentMethodType(PAYMENT_METHOD_TYPE.CARD)">
+                                    {{ 'fullSignup.creditCard' | translate }}
+                                </div>
+                            </div>
+                            <div id="bank-form" formGroupName="bank" *ngIf="paymentForm.getMethod() === PAYMENT_METHOD_TYPE.BANK">
+                                <ion-grid>
+                                    <ion-row>
+                                        <ion-col col-lg-6 col-12 col-xs-12>
+                                            <ion-item style = " border-bottom-left-radius: 7px; border-bottom-right-radius: 7px;">
+                                                <ion-input type="text" placeholder="{{ 'signUp.billingOptions.bankName' | translate }}" autocomplete="on" required formControlName="accountHolderName"></ion-input>
+                                            </ion-item>
+                                        </ion-col>
+                                        <ion-col col-lg-6 col-12 col-xs-12>
+                                            <ion-item>
+                                                <ion-input placeholder="{{ 'signUp.billingOptions.bankNumber' | translate }}"  required formControlName="accountNumber" ></ion-input>
+                                            </ion-item>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-grid>
+
+
+                            </div>
+                            <div  id="card-form" formGroupName="card" *ngIf="paymentForm.getMethod() === PAYMENT_METHOD_TYPE.CARD">
+                                <ion-grid>
+                                    <ion-row>
+                                        <ion-col col-lg-6 col-12 col-xs-12>
+                                            <ion-item>
+                                                <ion-input type="number" autocomplete="cc-name" autocomplete="cc-number" placeholder="{{ 'signUp.billingOptions.cardNumber' | translate }}"
+                                                    autocomplete="on" required formControlName="creditCardNumber" style = " border-top-left-radius: 7px; border-top-right-radius: 7px;"></ion-input>
+                                            </ion-item>
+
+                                        </ion-col>
+                                        <ion-col col-lg-6 col-12 col-xs-12>
+                                            <ion-item>
+                                                <ion-input type="text" placeholder="{{ 'signUp.billingOptions.cardName' | translate }}" autocomplete="on" required formControlName="name"></ion-input>
+                                            </ion-item>
+                                        </ion-col>
+                                    </ion-row>
+                                    <ion-row>
+                                        <ion-col col-12 col-xs-12 col-lg-6>
+                                            <ion-item>
+                                                <ion-select placeholder="MM" autocomplete="cc-exp-month" formControlName="expiryMonth">
+                                                    <ion-option value="01">01</ion-option>
+                                                    <ion-option value="02">02</ion-option>
+                                                    <ion-option value="03">03</ion-option>
+                                                    <ion-option value="04">04</ion-option>
+                                                    <ion-option value="05">05</ion-option>
+                                                    <ion-option value="06">06</ion-option>
+                                                    <ion-option value="07">07</ion-option>
+                                                    <ion-option value="08">08</ion-option>
+                                                    <ion-option value="09">09</ion-option>
+                                                    <ion-option value="10">10</ion-option>
+                                                    <ion-option value="11">11</ion-option>
+                                                    <ion-option value="12">12</ion-option>
+                                                </ion-select>
+
+                                                <ion-select placeholder="YYYY" autocomplete="cc-exp-year" formControlName="expiryYear">
+                                                    <ion-option>2017</ion-option>
+                                                    <ion-option>2018</ion-option>
+                                                    <ion-option>2019</ion-option>
+                                                    <ion-option>2020</ion-option>
+                                                    <ion-option>2021</ion-option>
+                                                    <ion-option>2022</ion-option>
+                                                </ion-select>
+                                            </ion-item>
+                                        </ion-col>
+                                        <ion-col col-12 col-xs-12 col-lg-6>
+                                            <ion-item>
+                                                <ion-input type="number" placeholder="{{ 'signUp.billingOptions.cvc' | translate }}" required formControlName="cvc"></ion-input>
+                                            </ion-item>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-grid>
+                            </div>
+
+                            <h2>Option: Gutschein-Code</h2>
+                            <ion-grid>
+                                <ion-row>
+                                    <ion-col col-lg-6 col-12 col-xs-12>
+                                        <ion-item>
+                                            <ion-input type="text" (focus)="checkUserForm(5)" placeholder="Gutschein-Code" formControlName="voucher"></ion-input>
+                                        </ion-item>
+                                    </ion-col>
+                                </ion-row>
+                            </ion-grid>
+                        </div>
+                        <div class="form-section" formGroupName="tacForm" (mousemove)="checkUserForm(5)">
+                            <h2>{{"fullSignup.steps.header4" | translate}}</h2>
+                            <ion-item>
+                                <ion-label>{{'fullSignup.tosLabel' | translate}}</ion-label>
+                                <ion-checkbox formControlName="tac"></ion-checkbox>
+                            </ion-item>
+
+
+                                <div no-margin id="legal-btns">
+                                    <button clear ion-button (click)="readTermsAndConditions($event)" color="secondary">{{ 'signUp.freeAccount.termsAndConditions' | translate }}</button>
+                                    <button clear ion-button (click)="readPrivacyPolicy($event)" color="secondary">{{ 'signUp.freeAccount.privacyPolicy' | translate }}</button>
+                                </div>
+
+                        </div>
+                        <button ion-button type="submit" [disabled]="!registerForm.valid">{{ 'fullSignup.submitBtn' | translate}}</button>
+                    </form>
+                </ion-list>
+            </ion-col>
+        </div>
+
+    </ion-grid>
+
+</ion-content>

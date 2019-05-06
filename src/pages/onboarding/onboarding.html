@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="popup__heading">
+      {{ 'onboardingTutorial.title' | translate }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="toc-modal-page">
+  <div class="popup__content">
+    <div class="popup__content-left">
+      <div style="white-space: pre-line;" class="popup__text">{{ 'onboardingTutorial.content' | translate }}</div>
+    </div>
+    <div class="popup__content-right">
+      <figure class="popup__img-wrapper">
+        <img src="assets/img/popup-img.png" alt="" class="popup__img">
+      </figure>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar style="text-align: center;">
+    <button ion-button (click)="closeTapped()">{{ 'onboardingTutorial.close' | translate }}</button>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,193 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      {{ 'general.menu.myData' | translate }}
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="logout()">
+        {{ 'general.signOut' | translate }}
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+
+
+
+<ion-content style="background:#F5F5F5">
+  <div padding *ngIf="user.registrationState == 'complete'">
+      <div class="item row">
+        <span style="text-align:left" class="col col-50"><h2>Dein Plan</h2></span>
+        <span style="text-align:right" class="col col-50"><h2>{{ user.planName }}</h2></span>
+      </div>
+    <hr width="100%">
+    <div id="header-coupon"><h2>Gutschein-Code</h2></div>
+  </div>
+  <form [formGroup]="form" (ngSubmit)="updateUser($event)" novalidate *ngIf="user.registrationState == 'complete'">
+    <ion-list class="data-form">
+        <ion-item>
+          <ion-input class="voucher" type="text" placeholder="Gutschein-Code" formControlName="voucher" [(ngModel)]="user.voucher"></ion-input>
+        </ion-item>
+    </ion-list>
+    <div padding>
+      <button ion-button color="primary" type="submit" full class="submit-button">Senden</button>
+    </div>
+  </form>
+    <div padding *ngIf="accounts && user.registrationState == 'complete'">
+    <!--<div padding *ngIf="accounts && user.registrationState == 'complete' && user.accounts.postfach_active===true ">-->
+    <h4>{{ 'myData.currentPostfachAddress' | translate }}</h4>
+  </div>
+  <ion-list *ngIf="accounts && user.registrationState == 'complete'">
+  <!--<ion-list *ngIf="accounts && user.registrationState == 'complete'  && user.accounts.postfach_active===true">-->
+    <ion-item style = "border-top-left-radius: 7px; border-top-right-radius: 7px; user-select: text;" >
+      <ion-label> Digitalkasten#{{postfach}}</ion-label>
+    </ion-item>
+    <ion-item style = "border-bottom-left-radius: 7px; border-bottom-right-radius: 7px; user-select: text;">
+      <ion-label> Bessemerstraße 83-91, 12103, Berlin </ion-label>
+    </ion-item>
+  </ion-list>
+  <div padding *ngIf="accounts && user.registrationState == 'complete'">
+  <!--<div padding *ngIf="accounts && user.registrationState == 'complete'  && user.accounts.bulkscan_active===true">-->
+    <h4>{{ 'myData.currentBulkscanAddress' | translate }}</h4>
+  </div>
+  <ion-list  *ngIf="accounts && user.registrationState == 'complete'">
+  <!--<ion-list  *ngIf="accounts && user.registrationState == 'complete'  && user.accounts.bulkscan_active===true">-->
+    <ion-item style = "border-top-left-radius: 7px; border-top-right-radius: 7px; user-select: text;">
+      <ion-label> Digitalkasten#{{bulkscan}}</ion-label>
+    </ion-item>
+    <ion-item style = "border-bottom-left-radius: 7px; border-bottom-right-radius: 7px; user-select: text;" >
+      <ion-label> Bessemerstraße 83-91, 12103, Berlin </ion-label>
+    </ion-item>
+  </ion-list>
+  <div padding>
+    <h4>{{ 'myData.currentAddress' | translate }}</h4>
+  </div>
+  <form [formGroup]="form" (ngSubmit)="updateUser($event)" novalidate>
+    <ion-list class="data-form">
+
+
+      <ion-item class="country-select">
+        <ion-label>Land</ion-label>
+        <ion-select>
+          <ion-option value="Germany">Germany</ion-option>
+        </ion-select>
+      </ion-item>
+
+
+
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'myData.mailDeliveryFirstname' | translate }}" formControlName="mailDeliveryFirstName" [(ngModel)]="user.mailDeliveryFirstName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'myData.mailDeliveryLastname' | translate }}" formControlName="mailDeliveryLastName" [(ngModel)]="user.mailDeliveryLastName"></ion-input>
+      </ion-item>
+
+
+
+
+
+
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'myData.mailDeliveryCompany' | translate }}" formControlName="mailDeliveryAdresszusatz" [(ngModel)]="user.mailDeliveryAdresszusatz"></ion-input>
+      </ion-item>
+
+
+
+
+
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'myData.mailDeliveryAddress' | translate }}" formControlName="mailDeliveryAddress" [(ngModel)]="user.mailDeliveryStreet"></ion-input>
+      </ion-item>
+
+
+
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'myData.houseNumber' | translate }}" formControlName="mailDeliveryHouseNumber" [(ngModel)]="user.mailDeliveryHouseNumber"></ion-input>
+      </ion-item>
+
+
+
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'myData.company' | translate }}" formControlName="mailDeliveryCompany" [(ngModel)]="user.mailDeliveryCompany"></ion-input>
+      </ion-item>
+
+
+
+
+      <ion-item>
+        <ion-input type="number" placeholder="{{ 'myData.mailDeliveryZip' | translate }}" formControlName="mailDeliveryZip" [(ngModel)]="user.mailDeliveryZipcode"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'myData.mailDeliveryCity' | translate }}" formControlName="mailDeliveryCity" [(ngModel)]="user.mailDeliveryCity"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'myData.phone' | translate }}" formControlName="phone" [(ngModel)]="user.phone"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div padding>
+      <h4>{{ 'myData.yourAccount' | translate }}</h4>
+    </div>
+    <ion-list class="data-form">
+      <ion-list class="account-email" style="margin-bottom: 0 !important;padding-bottom: 0;box-shadow: none;">
+        <ion-item>
+          <ion-input type="email" placeholder="{{ 'myData.email' | translate }}" formControlName="email" [(ngModel)]="user.email" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="email" placeholder="{{ 'myData.repeatEmail' | translate }}" formControlName="emailConfirmation"></ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-list class="account-password" style="margin-bottom: 0 !important;padding-bottom: 0;box-shadow: none;">
+        <ion-item>
+          <ion-input type="password" placeholder="{{ 'myData.password' | translate }}" formControlName="password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="password" placeholder="{{ 'myData.repeatPassword' | translate }}" formControlName="passwordConfirmation"></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-list>
+    <!--<div padding style="padding-top:0px;">{{ 'myData.passwordNeeds' | translate }}</div>-->
+    <div padding>
+      <h4>{{ 'myData.notifications.title' | translate }}</h4>
+      <p>{{ 'myData.notifications.message' | translate }}</p>
+    </div>
+    <ion-list>
+      <ion-item style = " border-top-left-radius: 7px; border-top-right-radius: 7px;" >
+        <ion-label>{{ 'myData.pushNotification' | translate }}</ion-label>
+        <ion-toggle value="push-notifications" formControlName="receiveNotificationsViaPush" [(ngModel)]="user.receiveNotificationsViaPush"></ion-toggle>
+      </ion-item>
+      <ion-item style = " border-bottom-left-radius: 7px; border-bottom-right-radius: 7px;">
+        <ion-label>{{ 'myData.emailNotification' | translate }}</ion-label>
+        <ion-toggle value="e-mail" formControlName="receiveNotificationsViaEmail" [(ngModel)]="user.receiveNotificationsViaEmail"></ion-toggle>
+      </ion-item>
+      <!--
+      <ion-item>
+        <ion-label>{{ 'myData.zendeskChat' | translate }}</ion-label>
+        <ion-toggle value="widget" formControlName="enableWidget" [(ngModel)]="user.enableWidget" ></ion-toggle>
+      </ion-item>
+      !-->
+    </ion-list>
+    <div padding>
+      <h4>{{ 'myData.newsletter' | translate }}</h4>
+    </div>
+    <ion-list>
+      <ion-item style = "border-radius: 7px;">
+        <ion-label>{{ 'myData.receiveNewsletter' | translate }}</ion-label>
+        <ion-toggle value="newsletter" formControlName="receiveNewsletter" [(ngModel)]="user.receiveNewsletter"></ion-toggle>
+      </ion-item>
+    </ion-list>
+    <div padding>
+      <button ion-button color="secondary" type="submit" full class="submit-button">{{ 'myData.save' | translate }}</button>
+    </div>
+  </form>
+
+
+
+  <div padding>
+    <h4>{{ 'myData.danger' | translate }}</h4>
+    <button ion-button color="danger" full (click)="confirmDelete()" class="submit-button">{{ 'myData.deleteAccount' | translate }}</button>
+  </div>
+</ion-content>

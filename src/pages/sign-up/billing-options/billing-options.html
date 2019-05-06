@@ -1,0 +1,131 @@
+<ion-content padding-bottom>
+  <div padding-vertical>
+    <div class="progress-wrapper">
+      <button ion-button clear icon-left navPop>
+        <ion-icon name='arrow-back'></ion-icon>
+        <ng-template showWhen="ios">
+          Back
+        </ng-template>
+      </button>
+      <div class="progress-chart">
+        <div class="step active">
+          <ion-icon name="md-mail"></ion-icon>
+        </div>
+        <div class="line active"></div>
+        <div class="step active">
+          <ion-icon name="md-card"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form [formGroup]="paymentForm.formGroup" class="meethod" (ngSubmit)="onSubmit($event)" (keyup)="checkUserForm(5)">
+    <header padding>
+      <h4>Option: Gutschein-Code</h4>
+    </header>
+    <ion-list>
+      <ion-item style="border-radius: 7px">
+        <ion-input type="text" placeholder="Gutschein-Code" formControlName="voucher"></ion-input>
+      </ion-item>
+    </ion-list>
+    <header padding>
+      <h4>{{ 'signUp.billingOptions.method' | translate }}</h4>
+    </header>
+    <ion-list>
+      <ion-item style="border-radius: 7px">
+        <ion-label>{{ 'signUp.billingOptions.method' | translate }}</ion-label>
+        <ion-select formControlName="type">
+          <ion-option value="bank" selected="true">
+            {{ 'signUp.billingOptions.bank' | translate }}
+          </ion-option>
+          <ion-option value="card">
+            {{ 'signUp.billingOptions.card' | translate }}
+          </ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <div formGroupName="bank" *ngIf="paymentForm.getMethod() === 'bank'">
+      <header padding>
+        <h4>{{ 'signUp.billingOptions.bankTitle' | translate }}</h4>
+      </header>
+      <ion-list>
+        <ion-item style = " border-top-left-radius: 7px; border-top-right-radius: 7px;">
+          <ion-input type="text" placeholder="{{ 'signUp.billingOptions.bankName' | translate }}" autocomplete="on" required formControlName="accountHolderName"></ion-input>
+        </ion-item>
+        <ion-item style = " border-bottom-left-radius: 7px; border-bottom-right-radius: 7px;">
+          <ion-input type="text" placeholder="{{ 'signUp.billingOptions.bankNumber' | translate }}" autocomplete="on" required formControlName="accountNumber"></ion-input>
+        </ion-item>
+      </ion-list>
+    </div> <!-- bank form group -->
+
+    <div formGroupName="card" *ngIf="paymentForm.getMethod() === 'card'">
+      <header padding>
+        <h4>{{ 'signUp.billingOptions.cardTitle' | translate }}</h4>
+      </header>
+
+      <ion-list style="border-radius: 7px">
+        <ion-item style = " border-top-left-radius: 7px; border-top-right-radius: 7px;">
+          <ion-input type="number" placeholder="{{ 'signUp.billingOptions.cardNumber' | translate }}" autocomplete="on" required formControlName="creditCardNumber"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" placeholder="{{ 'signUp.billingOptions.cardName' | translate }}" autocomplete="on" required formControlName="name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-select placeholder="MM" autocomplete="on" formControlName="expiryMonth">
+            <ion-option value="01">01</ion-option>
+            <ion-option value="02">02</ion-option>
+            <ion-option value="03">03</ion-option>
+            <ion-option value="04">04</ion-option>
+            <ion-option value="05">05</ion-option>
+            <ion-option value="06">06</ion-option>
+            <ion-option value="07">07</ion-option>
+            <ion-option value="08">08</ion-option>
+            <ion-option value="09">09</ion-option>
+            <ion-option value="10">10</ion-option>
+            <ion-option value="11">11</ion-option>
+            <ion-option value="12">12</ion-option>
+          </ion-select>
+
+          <ion-select placeholder="YYYY" autocomplete="on" formControlName="expiryYear">
+            <ion-option>2017</ion-option>
+            <ion-option>2018</ion-option>
+            <ion-option>2019</ion-option>
+            <ion-option>2020</ion-option>
+            <ion-option>2021</ion-option>
+            <ion-option>2022</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item style = " border-bottom-left-radius: 7px; border-bottom-right-radius: 7px;">
+          <ion-input type="number" placeholder="{{ 'signUp.billingOptions.cvc' | translate }}" required formControlName="cvc"></ion-input>
+        </ion-item>
+      </ion-list>
+    </div> <!-- card form group -->
+    <ion-list class="points">
+      <ion-item style = " border-top-left-radius: 7px; border-top-right-radius: 7px;">
+        <ion-icon name="md-checkmark-circle"></ion-icon>
+        {{ 'signUp.billingOptions.point' | translate }}
+      </ion-item>
+      <ion-item>
+        <ion-icon name="md-checkmark-circle"></ion-icon>
+        {{ 'signUp.billingOptions.point3' | translate }}
+      </ion-item>
+      <ion-item style = " border-bottom-left-radius: 7px; border-bottom-right-radius: 7px;">
+        <ion-icon name="md-checkmark-circle"></ion-icon>
+        {{ 'signUp.billingOptions.point4' | translate }}
+      </ion-item>
+    </ion-list>
+    <div class="errors" *ngIf="errors.length">
+      <ion-list>
+        <ion-item color="danger" *ngFor="let error of errors">
+          {{ error }}
+        </ion-item>
+      </ion-list>
+    </div>
+    <div padding>
+      <button ion-button full type="submit">
+        {{ 'signUp.billingOptions.signUp' | translate }}
+      </button>
+    </div>
+  </form>
+</ion-content>

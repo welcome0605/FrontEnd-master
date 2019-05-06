@@ -1,0 +1,53 @@
+page-free-account {
+  .panel {
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
+
+    .customized {
+      box-shadow: none;
+
+      &:first-child {
+        margin-bottom: 0 !important;
+        padding-bottom: 0;
+
+      }
+
+      &:last-child {
+        margin-top: 0 !important;
+        padding-top: 0;
+
+      }
+      
+    }
+
+  }
+
+  .legal {
+    span:first-child {
+      margin-right: 20px;
+
+    }
+
+  }
+  .ion-list{
+    border-radius: 13px;
+  }
+
+  .errors {
+    ion-list {
+      ion-item {
+        color: #fff;
+
+
+      }
+
+    }
+
+  }
+.scroll-content{
+  background: #EEEEEE;
+}
+  .scroll-content .list {
+    box-shadow: none;
+  }
+  
+}

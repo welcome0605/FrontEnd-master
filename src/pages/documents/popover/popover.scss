@@ -1,0 +1,164 @@
+.popover-page {
+  .text-to-change div {
+    margin: 10px auto;
+  }
+
+  ion-row,
+  ion-col {
+    padding: 0;
+  }
+
+  .text-button {
+    padding-left: 0;
+    text-align: center;
+    min-height: 20px;
+    line-height: 18px;
+  }
+
+  .text-button .item-inner {
+    padding-right: 0;
+  }
+
+  .text-smaller {
+    font-size: 12px;
+  }
+
+  .text-larger {
+    font-size: 16px;
+  }
+
+  .row-dots {
+    text-align: center;
+
+    .dot {
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      margin: 10px auto;
+      position: relative;
+    }
+
+  }
+
+  .dot-white {
+    background-color: rgb(255, 255, 255);
+  }
+
+  .dot-tan {
+    background-color: rgb(249, 241, 228);
+  }
+
+  .dot-grey {
+    background-color: rgb(76, 75, 80);
+  }
+
+  .dot-black {
+    background-color: rgb(0, 0, 0);
+  }
+
+  .dot.selected {
+    border-width: 2px;
+    border-color: #327eff;
+  }
+
+  .text-athelas {
+    font-family: "Athelas";
+  }
+
+  .text-charter {
+    font-family: "Charter";
+  }
+
+  .text-iowan {
+    font-family: "Iowan";
+  }
+
+  .text-palatino {
+    font-family: "Palatino";
+  }
+
+  .text-san-francisco {
+    font-family: "San Francisco";
+  }
+
+  .text-seravek {
+    font-family: "Seravek";
+  }
+
+  .text-times-new-roman {
+    font-family: "Times New Roman";
+  }
+
+}
+
+.hairlines {
+  .popover-page {
+    .text-smaller,
+    .row-dots,
+    .dot {
+      border-width: $hairlines-width;
+    }
+
+  }
+
+}
+
+.popover-page {
+  .text-smaller {
+    border-right: 1px solid $list-md-border-color;
+  }
+
+  .row-dots {
+    border-bottom: none;
+  }
+
+  .dot {
+    border: 1px solid $list-md-border-color;
+  }
+
+}
+
+.popover-menu.list-md .item-block .item-inner {
+  border-bottom: none;
+}
+
+.popover-menu.list-md {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.popover-menu.list-md .item-block .item-inner:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+ion-icon {
+  &[class*="custom-"] {
+    mask-size: contain;
+    mask-position: 50% 50%;
+    mask-repeat: no-repeat;
+    background: currentColor;
+    width: 1em;
+    height: 1em;
+  }
+  &[class*="custom-share-icon"] {
+    mask-image: url(../assets/img/icons/share-doc.svg);
+  }
+  &[class*="custom-favorite-icon"] {
+    mask-image: url(../assets/img/icons/favorite.svg);
+  }
+  &[class*="custom-tags-edit-icon"] {
+    mask-image: url(../assets/img/icons/tags-edit.svg);
+  }
+  &[class*="custom-send-to-user-icon"] {
+    mask-image: url(../assets/img/icons/send-to-user.svg);
+  }
+  &[class*="custom-send-to-me-icon"] {
+    mask-image: url(../assets/img/icons/send-to-me.svg);
+  }
+  &[class*="custom-trash-icon"] {
+    mask-image: url(../assets/img/icons/trash.svg);
+  }
+  &[class*="custom-mark-as-unread-icon"] {
+    mask-image: url(../assets/img/icons/mark-as-unread.svg);
+  }
+}

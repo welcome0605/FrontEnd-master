@@ -1,0 +1,508 @@
+{
+  "general": {
+    "menu": {
+      "inbox": "Posteingang",
+      "marked": "Favoriten",
+      "sendtome": "Zu mir schicken",
+      "trash": "Vernichtet",
+      "account": "Konto",
+      "myData": "Meine Daten",
+      "nextSendDate": "Nächster Versand",
+      "sendButton": "Jetzt zuschicken",
+      "customFolders": "Meine Ordner",
+      "addFolder": "Neuen Ordner erstellen",
+      "archive": "Archiv",
+      "billing": "Abrechnung",
+      "PostfachAccount":"Postfach",
+      "BulkscanAccount": "Bulk-Scan",
+      "postfach":{
+        "titleFirst":"Deine persönliche Digitalkastenadresse",
+        "titleSecond":"Nutze Sie, um deine Post immer digital zu empfangen",
+        "firstSection":"Lass dir jede gewünschte Post an deine eigene Digitalkastenadresse schicken.Teile diese Adresse dazu deinen Absendern mit.",
+        "secondSection":"Nutze deinen Digitalkasten als digitalen Briefkasten. Jede Post, die du dir an deine Digitalkastenadresse schicken lässt wird in unserem Scancenter pünktlich, tagesaktuell und 100% anonym digitalisiert und dir im Digitalkasten hochgeladen."
+      },
+      "bulkscan":{
+        "titleFirst":"Das persönliche Scancenter",
+        "titleSecond":" Digitalisieren Sie beliebig viele Geschäftsunterlagen",
+        "firstSection":"Befreien Sie Ihr Büro von Akten und Zettelwirtschaft und schicken Sie alle Unterlagen an Ihre persönliche Digitalkastenadresse.",
+        "secondSection":"Wir scannen diese umgehend und stellen Sie Ihnen digitalisiert zur Verfügung. Wichtig ist, dass Sie zwischen alle Dokumente eine Trennseite legen, damit wir die jeweiligen Seiten in einer PDF zusammenfassen können. Wenn Sie Fragen dazu haben oder Preise wissen möchten, schreiben Sie uns unter",
+        "mail": "info@digitalkasten.de."
+
+      },
+      "sendAlert": {
+        "title": "Dokumente jetzt zuschicken lassen für 2,50€ + Porto",
+        "message": "Wir schicken Dir alle Dokumente aus diesem Ordner zu. Der Betrag von 2,50€ + Porto wird Dir am Ende des Monats abgebucht.",
+        "send": "Ja (2,50€ + Porto)",
+        "doNotSent": "Abbrechen",
+        "pleaseConfirmEmailFirst": "Bitte bestätige zunächst Deine Email."
+      },
+      "earlier": "Früher",
+      "confirmAlert": {
+        "title": "Anfrage erhalten",
+        "message": "Vielen Dank. Wir verschicken Deine gesammelten Sendungen innerhalb von einem Werktag"
+      }
+    },
+    "agree": "Zustimmen",
+    "understood": "Verstanden",
+    "disagree": "Ablehnen",
+    "genericError": "Ein Fehler ist aufgetreten",
+    "cancel": "Abbrechen",
+    "finished": "Fertig",
+    "signOut": "Abmelden",
+    "continue": "Fortfahren",
+    "dismiss": "Abbrechen"
+  },
+  "login": {
+    "email": "E-Mail Adresse",
+    "password": "Passwort",
+    "login": "Login",
+    "newAccount": "Neuen Account erstellen",
+    "forgetPassword": "Passwort vergessen",
+    "resetPassword": "Passwort zurücksetzen",
+    "credentialsDontMatch": "Deine Zugangsdaten stimmen nicht überein.",
+    "accountActivated": "Dein Konto wurde erfolgreich aktiviert.",
+    "wait" : "Bitte warten..."
+  },
+  "documents": {
+    "documentList": {
+      "pages": "Seiten",
+      "hasBeenDestroyed": "Dein Dokument wurde verschoben.",
+      "hasBeenFavorited": "Dein Dokument wurde als Favorit markiert.",
+      "hasBeenUnfavorited": "Dein Dokument wurde aus den Favoriten entfernt.",
+      "actions": {
+        "title": "Aktionen",
+        "download": "Herunterladen",
+        "share": "Dokument teilen",
+        "favorite": "Als Favorit markieren",
+        "unfavorite": "Aus Favoriten entfernen",
+        "labels": "Tags bearbeiten",
+        "destroy": "Dokument vernichten",
+        "cancel": "Abbrechen",
+        "move": "In Ordner verschieben",
+        "moveToSendToMe": "In \"Zu mir schicken\" schieben",
+        "removeFromSendToMe": "Aus \"Zu mir schicken\" entfernen",
+        "markAsUnread": "Als ungelesen markieren"
+      },
+      "hasBeenMovedToFolder": "Das Dokument wurde verschoben.",
+      "destroyAlert": {
+        "title": "Dokumente wirklich vernichten?",
+        "message": "Das Dokument bleibt digital erhalten, wird aber physisch vernichtet. Der Vorgang kann nicht rückgängig gemacht werden. Bist Du sicher?"
+      }
+    },
+    "inbox": {
+      "searchQuery": "Suchergebnis für \"{{ query }}\"",
+      "noLetters": "Keine Briefe gefunden. Wenn Du Dich gerade registriert hast, siehst Du hier in wenigen Tagen Deine Post. Dein Nachsendeauftrag wird 10 Tage nach Registrierung aktiv und Dein Digitalkasten ist bereit Sendungen zu empfangen.",
+      "noMarkedLetters": "Du hast noch keine Briefe favorisiert. Klicke auf die Brief-Optionen und wähle \"Als Favorit markieren\".",
+      "noNotSendLetters": "Wir haben Dir alle Briefe zugeschickt.",
+      "noDestroyed": "Alle Sendungen die Du hier findest werden physisch vernichtet. Die digitale Version kannst Du in Deinem monatlichen Archiv finden."
+    },
+    "labelEditor": {
+      "typeLabel": "Stichwort eingeben...",
+      "addLabel": "Tag hinzufügen",
+      "tagDeleted": "Tag wurde entfernt"
+    },
+    "search": {
+      "label": "Suche nach Dokumenten..."
+    }
+  },
+  "myData": {
+    "back": "Zurück",
+    "currentAddress": "Deine Sammelsendung Adresse",
+    "currentPostfachAddress": "Deine Postfach Adresse",
+    "currentBulkscanAddress": "Deine Bulk-scan Adresse",
+    "email": "E-Mail",
+    "repeatEmail": "E-Mail wiederholen",
+    "password": "Passwort",
+    "repeatPassword": "Passwort wiederholen",
+    "firstname": "Vorname",
+    "lastname": "Nachname",
+    "company": "Adresszusatz (optional)",
+    "companyField": "Company",
+    "houseNumber": "Hause Nummer",
+    "address": "Straße + Hausnummer",
+    "zip": "PLZ",
+    "city": "Stadt",
+    "phone": "Telefonnummer",
+    "copyFromAddress": "Aus 1.Adresse übernehmen",
+    "mailDeliveryFirstname": "Vorname",
+    "mailDeliveryLastname": "Nachname",
+    "mailDeliveryCompany": "Adresszusatz (Optional)",
+    "mailDeliveryAddressHeading": "Wohin sollen wir Deine Post schicken?",
+    "mailDeliveryAddress": "Adresse",
+    "mailDeliveryZip": "PLZ",
+    "mailDeliveryCity": "Stadt",
+    "yourAccount": "Dein Konto",
+    "passwordNeeds": "",
+    "sendAddress": "Wohin sollen wir Deine Post schicken?",
+    "acceptTerms": "AGB und Datenschutz",
+    "notifications": {
+      "title": "Benachrichtigungen",
+      "message": "Wir möchten Dich gerne benachrichtigen, wenn eine neue Sendung gescannt wurde. Wähle bitte aus, wie wir Dich benachrichtigen sollen."
+    },
+    "scanned_documents" : "Gescannte Dokumente",
+    "mail_deliveries": "Abgeschickte Sammelsendungen",
+    "billing": {
+      "description_header": "Hier findest Du eine Übersicht Deiner aktuellen Kosten in dem letzten Abrechnungszeitraum.",
+      "description": "Service",
+      "loading": "Lade…",
+      "no_billing_data_found": "Für den aktuellen Monat liegen keine Daten vor.",
+      "total": "Gesamt",
+      "scanned_documents" : "Gescannte Dokumente",
+      "mail_deliveries": "Abgeschickte Sammelsendungen"
+    },
+    "pleaseVerifyEmail": "Bitte bestätige Deine Email Adresse, um die Registrierung abzuschliessen",
+    "pushNotification": "Push-Benachrichtigung",
+    "emailNotification": "E-Mail",
+    "zendeskChat": "Help Center",
+    "newsletter": "Newsletter",
+    "receiveNewsletter": "Newsletter abonnieren",
+    "save": "Änderungen speichern",
+    "danger": "Konto deaktivieren",
+    "deleteAccount": "Mein Konto deaktivieren",
+    "accountUpdated": "Dein Konto wurde aktualisiert",
+    "accountDeleted": "Bitte schick uns Deine Kündigung an info@digitalkasten.de",
+    "accountDeletedError": "Bitte schick uns Deine Kündigung an info@digitalkasten.de",
+    "confirmAlert": {
+      "title": "Konto deaktivieren",
+      "message": "Um Dein Konto zu deaktivieren, musst Du uns einfach eine Email an info@digitalkasten.de. Bitte beachte dabei die Kündigungsfristen aus unseren AGB"
+    },
+    "loggedOut": "Dein Konto konnte nicht geladen werden. Bist Du eingeloggt?",
+    "createFreeAccount": "Konto erstellen",
+    "createFreeBusinessAccount": "Business Konto erstellen",
+    "pickYourEmail": "1. Wähle Deine Email",
+    "emailPlaceholder": "",
+    "repeatEmailPlaceholder": "",
+    "pickYourPassword": "2. Wähle Dein Passwort",
+    "passwordPlaceholder": "",
+    "repeatPasswordPlaceholder": "",
+    "pickPhoneNumber": "3. Deine Telefonnummer",
+    "phone": "Telefonnummer",
+    "company": "Firmenname",
+    "companyPick": "4. Firma",
+    "phonePlaceholder": "",
+    "companyPlaceholder": "",
+    "termsOfServiceAndDataPolicy": "4. AGB und Datenschutz"
+
+
+  },
+  "companyData": {
+    "back": "Zurück",
+    "currentAddress": "Deine Adresse",
+    "email": "E-Mail",
+    "repeatEmail": "E-Mail wiederholen",
+    "password": "Passwort",
+    "repeatPassword": "Passwort wiederholen",
+    "firstname": "Vorname",
+    "lastname": "Nachname",
+    "company": "Firmenname",
+    "address": "Adresse",
+    "zip": "PLZ",
+    "city": "Stadt",
+    "phone": "Telefonnummer",
+    "copyFromAddress": "Aus 1.Adresse übernehmen",
+    "mailDeliveryFirstname": "Vorname",
+    "mailDeliveryLastname": "Nachname",
+    "mailDeliveryAdresszusatz": "Adresszusatz",
+    "mailDeliveryCompany": "Company",
+    "mailDeliveryAddressHeading": "Wohin sollen wir Deine Post schicken?",
+    "mailDeliveryAddress": "Adresse",
+    "mailDeliveryZip": "PLZ",
+    "mailDeliveryCity": "Stadt",
+    "yourAccount": "Dein Konto",
+    "passwordNeeds": "",
+    "sendAddress": "Wohin sollen wir Deine Post schicken?",
+    "acceptTerms": "AGB und Datenschutz",
+    "notifications": {
+      "title": "Benachrichtigungen",
+      "message": "Wir möchten Dich gerne benachrichtigen, wenn eine neue Sendung gescannt wurde. Wähle bitte aus, wie wir Dich benachrichtigen sollen."
+    },
+    "billing": {
+      "description_header": "Hier findest Du eine Übersicht Deiner aktuellen Kosten in dem letzten Abrechnungszeitraum.",
+      "description": "Service",
+      "loading": "Lade…",
+      "no_billing_data_found": "Für den aktuellen Monat liegen keine Daten vor.",
+      "total": "Gesamt"
+    },
+    "pleaseVerifyEmail": "Bitte bestätige Deine Email Adresse, um die Registrierung abzuschliessen",
+    "pushNotification": "Push-Benachrichtigung",
+    "emailNotification": "E-Mail",
+    "newsletter": "Newsletter",
+    "receiveNewsletter": "Newsletter abonnieren",
+    "save": "Änderungen speichern",
+    "danger": "Konto deaktivieren",
+    "deleteAccount": "Mein Konto deaktivieren",
+    "accountUpdated": "Dein Konto wurde aktualisiert",
+    "accountDeleted": "Bitte schick uns Deine Kündigung an info@digitalkasten.de",
+    "accountDeletedError": "Bitte schick uns Deine Kündigung an info@digitalkasten.de",
+    "confirmAlert": {
+      "title": "Konto deaktivieren",
+      "message": "Um Dein Konto zu deaktivieren, musst Du uns einfach eine Email an info@digitalkasten.de. Bitte beachte dabei die Kündigungsfristen aus unseren AGB"
+    },
+    "loggedOut": "Dein Konto konnte nicht geladen werden. Bist Du eingeloggt?",
+    "createFreeAccount": "Konto erstellen",
+    "pickYourEmail": "1. Wähle Deine Email",
+    "emailPlaceholder": "",
+    "repeatEmailPlaceholder": "",
+    "pickYourPassword": "2. Wähle Dein Passwort",
+    "passwordPlaceholder": "",
+    "repeatPasswordPlaceholder": "",
+    "pickPhoneNumber": "3. Deine Telefonnummer",
+    "phone": "Telefonnummer",
+    "phonePlaceholder": "",
+    "termsOfServiceAndDataPolicy": "4. AGB und Datenschutz"
+
+
+  },
+  "requestPassword": {
+    "title": "Passwort zurücksetzen",
+    "email": "E-Mail Adresse",
+    "request": "Neues Passwort anfordern",
+    "back": "Zurück zum Login",
+    "message": "Vielen Dank für Deine Anfrage. Sofern wir ein passendes Konto finden, erhälst Du in den nächsten Minuten eine E-Mail mit weiteren Anweisungen."
+  },
+  "signup": {
+    "step1": {
+      "errors": {
+        "passwordIsTooWeak": "Dein Passwort ist zu schwach.",
+        "emailInvalid": "Du hast eine ungültige E-Mail Adresse angegeben.",
+        "passwordsDontMatch": "Die Passwörter stimmen nicht überein.",
+        "emailsDontMatch": "Die E-Mail Adressen stimmen nicht überein."
+      }
+    },
+    "step2": {
+      "title": "Zahlungsart",
+      "cardNumber": "Kreditkarten-Nummer",
+      "cardHolder": "Karten-Inhaber",
+      "cvv": "CVC",
+      "title_direct_debit": "Zahlung per Lastschrift",
+      "title_credit_card": "Zahlung per Kreditkarte",
+      "accountHolderName": "Kontoinhaber",
+      "accountNumber": "IBAN",
+      "argument1": "Digital:  Deine Post ist immer & überall verfügbar",
+      "argument2": "Einfach: Volle Kostentransparenz - 20€ Grundgebühr, 25€ Einmalige Einrichtungsgebühr",
+      "argument3": "Sicher: ISO Zertifizierte Prozesse - 100% Datensicherheit",
+      "argument4": "Effizient: Durchsuche und kategorisiere Deine komplette Post",
+      "paymentMethod": "Zahlungsart",
+      "creditcard": "Kreditkarte",
+      "directdebit": "Bankeinzug"
+    },
+    "step3": {
+      "title": "Fast fertig...",
+      "termsAndConditions": "Ich akzeptiere die allgemeinen Geschäftsbedingungen",
+      "redirectMail": "Ich erlaube euch meine Post umzuleiten",
+      "privacyPolicy": "Ich akzeptiere die Datenschutzerklärung",
+      "signup": "Jetzt kostenpflichtig anmelden",
+      "successMessage": "Deine Registrierung war erfolgreich. Bitte bestätige Deine Email Adresse.",
+      "showTermsAndConditions": "Die allgemeinen Geschäftsbedingungen anzeigen",
+      "showPrivacyPolicy": "Die Datenschutzerklärung anzeigen",
+      "needToAccept": "Bitte akzeptiere die AGB und die Datenschutzerklärung.",
+      "loading": "Registrieren…"
+    },
+    "step4": {
+      "headline": "Deine Registrierung war erfolgreich",
+      "text": "Wir kümmern uns um den Rest und erstellen für Dich direkt einen Nachsendeauftrag. Dieser beginnt in 10 Werktagen. Bitte beachte, dass Deine Post in dieser Zeit noch an Deiner alten Adresse ankommen kann.",
+      "goToLogin": "Zum Login"
+    },
+    "termsAndConditions": {
+      "title": "Allgemeine Geschäftsbedingungen",
+      "acceptBtn": "Schliessen"
+    },
+    "privacyPolicy": {
+      "title": "Datenschutzerklärung",
+      "acceptBtn": "Schliessen"
+    },
+    "userSignature": {
+      "title": "Post umleiten",
+      "message": "Mit meiner Unterschrift erlaube ich euch, dass ihr in meinem Namen einen Nachsendeantrag für meine angegebene Adresse einrichten dürft.",
+      "writeFullName": "Vor- und Nachname eintragen...",
+      "acceptBtn": "Ich erlaube euch meine Post umzuleiten",
+      "noNameError": "Bitte schreiben Sie Ihren vollen Namen in das Feld.",
+      "nameNotMatching": "Bitte gebe genau den Namen ein, den Du bei der Registrierung angegeben hast."
+    },
+    "plans": {
+      "title": "Wähle bitte ein Paket aus",
+      "month": "Monat",
+      "setupFee": "Einrichtungsgebühr",
+      "select": "Paket auswählen",
+      "option1": {
+        "title": "Flexibel",
+        "argument1": "Unbegrenzt Sendungen empfangen",
+        "argument2": "Unbegrenzt Sendungen scannen",
+        "argument3": "Unbegrenzt Sendungen vernichten",
+        "argument4": "Mobile App inklusive",
+        "argument5": "Digitalkasten-Datenschutzpaket",
+        "argument6": "Archivierung: 90 Tage inkl.",
+        "argument7": "Laufzeit 1 Monat"
+      },
+      "option2": {
+        "title": "6 Monate",
+        "argument1": "Unbegrenzt Sendungen empfangen",
+        "argument2": "Unbegrenzt Sendungen scannen",
+        "argument3": "Unbegrenzt Sendungen vernichten",
+        "argument4": "Mobile App inklusive",
+        "argument5": "Digitalkasten-Datenschutzpaket",
+        "argument6": "Archivierung: 90 Tage inkl.",
+        "argument7": "Laufzeit 6 Monate",
+        "argument8": "Erster Monat gratis"
+      },
+      "option3": {
+        "title": "12 Monate",
+        "argument1": "Unbegrenzt Sendungen empfangen",
+        "argument2": "Unbegrenzt Sendungen scannen ",
+        "argument3": "Unbegrenzt Sendungen vernichten",
+        "argument4": "Mobile App inklusive",
+        "argument5": "Digitalkasten-Datenschutzpaket",
+        "argument6": "Archivierung: 90 Tage inkl.",
+        "argument7": "Laufzeit 12 Monate",
+        "argument8": "Erster Monat gratis"
+      }
+    }
+  },
+  "signUp": {
+    "completeFirst": "Bitte vervollständige zunächst Deine Anmeldung.",
+    "freeAccount": {
+      "title": "Richte jetzt Deinen digitalen Postkasten in weniger als 1 Minute ein",
+      "acceptLegal": "Ich akzeptiere die AGB und die Datenschutzerklärung.",
+      "termsAndConditions": "AGB anzeigen",
+      "privacyPolicy": "Datenschutzerklärung anzeigen",
+      "needToAccept": "Bitte akzeptiere die AGB und die Datenschutzerklärung.",
+      "errors": {
+        "emailInvalid": "Du hast eine ungültige E-Mail Adresse angegeben.",
+        "emailsDontMatch": "Die E-Mail Adressen stimmen nicht überein.",
+        "needToAccept": "Bitte akzeptiere die AGB und die Datenschutzerklärung.",
+        "passwordsDontMatch": "Die Passwörter stimmen nicht überein.",
+        "pickEmail": "Bitte gib eine E-Mail Adresse an.",
+        "pickPassword": "Bitte wähle ein Passwort."
+      }
+    },
+    "paymentSuccess":{
+      "title": "Super! Dein Auftrag wird in Kürze aktiviert!",
+      "nextButton": "Was passiert als nächstes?"
+    },
+    "userPaymentTutorial":  {
+       "step1":{
+         "first": "Wir stellen jetzt deinen Nachsendeauftrag bei der Deutschen Post.",
+         "second": "Dieser wird in den nächsten 10 Werktagen aktiviert.",
+         "third": "Sobald dies geschehen ist, erhältst du eine E-Mail und wir buchen deine Einrichtungsgebühr ab."
+       },
+      "step2":{
+        "first": "Jetzt erhältst du deine Post tagesaktuell und gescannt über deinen Digitalkasten.",
+        "second": "Du kannst dir auch die App in deinem App-Store runterladen und deine Post bequem auf’s Handy bekommen."
+      },
+      "step3":{
+        "first": "Deine Post wird von unserem Scancenter komplett anonym und unter strengsten Sicherheitsbedingungen gescannt.",
+        "second": "Deine Laufzeit startet in 30 Tagen.",
+        "third": "Wenn du noch Fragen hast, schreib uns an",
+        "mail": "info@digitalkasten.de",
+        "end": "oder ruf uns an unter",
+        "phone": "030 588 49449"
+      },
+      "referral_button": "Empfehlungen bald möglich...",
+      "title": "Und was erwartet mich jetzt?"
+    },
+    "registrationSuccess": {
+      "title": "Deine Registrierung war erfolgreich",
+      "text": "Wir haben soeben Ihren Account erstellt. Testen Sie jetzt Ihren digitalen Briefkasten.",
+      "login": "Zum Briefkasten"
+    },
+    "loading": "Account wird erstellt…",
+    "completingRegistration": "Dein Account wird fertiggestellt…",
+    "billingOptions": {
+      "method": "Zahlungsart",
+      "bankTitle": "Zahlung per Lastschrift",
+      "bank": "Bankeinzug",
+      "bankName": "Kontoinhaber",
+      "bankNumber": "IBAN",
+      "cardTitle": "Zahlung per Kreditkarte",
+      "card": "Kreditkarte",
+      "cardNumber": "Kreditkarten Nummer",
+      "cardName": "Karten Inhaber",
+      "cvc": "CVC",
+      "point": "Digital: Deine Post ist immer & überall verfügbar",
+      "point2": "Einfach: Volle Kostentransparenz - 20€ Grundgebühr, 25€ Einmalige Einrichtungsgebühr",
+      "point3": "Sicher: ISO Zertifizierte Prozesse - 100% Datensicherheit",
+      "point4": "Effizient: Durchsuche und kategorisiere Deine komplette Post",
+      "description": "We will immediately process the forwarding order. You will find your first mail in Digitalkasten in just X days.",
+      "signUp": "Jetzt kostenpflichtig anmelden"
+    },
+    "signUpSuccess": {
+      "title": "Deine Registrierung war erfolgreich",
+      "text": "Wir kümmern uns um den Rest und erstellen für Dich direkt einen Nachsendeauftrag. Dieser beginnt in 10 Werktagen. Bitte beachte, dass Deine Post in dieser Zeit noch an Deiner alten Adresse ankommen kann.",
+      "login": "Zum Login"
+    },
+    "stripeError": {
+      "invalidIban": "Bitte gib eine gültige IBAN ein.",
+      "invalidOwner": "Bitte gib einen gültigen Kontoinhaber ein"
+    }
+  },
+  "folder": {
+    "new": {
+      "title": "Neuer Ordner",
+      "placeholder": "Ordnertitel eingeben...",
+      "button": "Neuen Ordner erstellen"
+    },
+    "edit": {
+      "title": "Ordner bearbeiten",
+      "button": "Ordner speichern"
+    }
+  },
+  "password_resets": {
+    "please_login_again": "Bitte logge Dich mit Deinem Neuen Passwort erneut ein"
+  },
+  "inbox": {
+    "waitWhileSettingUp": "Dein Postkasten wird aktualisiert…"
+  },
+  "banner":{
+    "message_start":"",
+    "message_link": "Vervollständige Deine Anmeldung",
+    "message_end":" und erhalte ab sofort Deine Post digital.",
+    "pleaseVerifyEmail": "Bitte bestätige Deine Email Adresse, um die Registrierung abzuschliessen"
+  },
+
+  "referralBanner": {
+    "referrFriend": "20€ für dich und deinen Freund!",
+    "bannerHeader": "Empfiehl uns!",
+    "text": "Nutze diesen Link um den Digitalkasten deinen Freunden zu empfehlen!",
+    "referrallExp": "Und so geht’s: ",
+    "referrallExp1":"Schick diesen Link deinen Freunden - wenn sie ihn bei ihrer Anmeldung nutzen, erhalten du und jeder Freund jeweils 20€ Gutschrift auf euren Digitalkasten! ",
+    "note": "PS: Wenn du Fragen hast, schreib uns oder ruf uns an! 030 - 588 49449 und info@digitalkasten.de ."
+  },
+  "onboardingTutorial": {
+    "title": "Willkommen in Deinem Digitalkasten!",
+    "close": "Schliessen",
+    "content": "Hier kannst Du sehen, wie Dein Digitalkasten einmal aussehen könnte.\n\nNutze die Zeit und teste alle Funktionen: Durchsuchen Deinen gesamten Posteingang nach Schlagwörtnern, sortiere Deine Post mit Ordnern und Tags, oder stöbere einfach durch Ihre Beispielpost!\n\n Natürlich funktioniert Dein Demokonto auch auf Deinem Smartphone, Tablet oder Desktop!"
+  },
+  "deleteFolder": {
+    "title": "Ordner löschen?",
+    "message": "Möchtest Du den Ordner wirklich löschen? Alle Dokumente werden in Deine Inbox verschoben.",
+    "abort": "Abbrechen",
+    "yes": "Löschen"
+  },
+  "fullSignup": {
+    "header": "Nur 3 Schritte zu Ihrem Digitalkasten",
+    "topBar": "Ihrem Digitalkasten einrichten",
+    "steps": {
+      "header1": "Schritt 1: Deine Email und Passwort",
+      "header2": "Schritt 2: Wo kommt momentan Deine Post an?",
+      "header3": "Schritt 3: Wie möchtest Du bezahlen?",
+      "header4": "Schritt 4: Los geht's!"
+    },
+    "bank": "Bankeinzug",
+    "creditCard": "Kreditkarte",
+    "tosLabel": "Hiermit bestätige ich die AGB und Datenschutzbestimmungen",
+    "submitBtn": "Kostenpflichtig Bestellen"
+  },
+  "companySignup": {
+    "header": "Nur 3 Schritte zu Deinem Digitalkasten",
+    "topBar": "Deinen Digitalkasten einrichten",
+    "steps": {
+      "header1": "Schritt 1: Deine Email und Passwort",
+      "header2": "Schritt 2: Wo kommt momentan Deine Post an?",
+      "header3": "Schritt 3: Wie möchtest Du bezahlen?",
+      "header4": "Schritt 4: Los geht's!"
+    },
+    "bank": "Bankeinzug",
+    "creditCard": "Kreditkarte",
+    "tosLabel": "Hiermit bestätige ich die AGB und Datenschutzbestimmungen",
+    "submitBtn": "Kostenpflichtig Bestellen"
+  }}

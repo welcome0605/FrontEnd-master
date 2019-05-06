@@ -1,0 +1,30 @@
+<ion-header no-border >
+    <ion-toolbar>
+        <ion-title>
+            <h1>{{ 'referralBanner.bannerHeader' | translate }} </h1>
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="closeTapped()" icon-only>
+                <ion-icon name="close"></ion-icon>
+
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content padding class="toc-modal-page">
+  <ion-row>
+    <h4>{{ 'referralBanner.text' | translate }}  </h4>
+  </ion-row>
+    <ion-row>
+            <ion-input type="text" [(ngModel)]="referral" name="content" required class="referral-link"></ion-input>
+    </ion-row>
+    <ion-row>
+        <p><b>{{ 'referralBanner.referrallExp' | translate }}</b>{{ 'referralBanner.referrallExp1' | translate }}</p>
+    </ion-row>
+    <ion-row>
+        <p>{{ 'referralBanner.note' | translate }}  </p>
+    </ion-row>
+    <ion-row>
+        <button ion-button id="facebook-button"> <div class="fb-share-button" data-href="https://digitalkasten.de/#/free-account?ref=" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.digitalkasten.de%2F&amp;src=sdkpreparse">Mit Freunden auf Facebook teilen</a></div></button>
+    </ion-row>
+</ion-content>

@@ -1,0 +1,32 @@
+<ion-list class="popover-menu">
+  <button menuClose ion-item (click)="openDocument(url)">
+    <ion-icon  name="custom-share-icon" clear item-right></ion-icon>
+      {{ 'documents.documentList.actions.download' | translate }}
+  </button>
+    <button menuClose ion-item (click)="markAsUnread(doc)" *ngIf="doc.openedByUser">
+      <ion-icon  name="custom-mark-as-unread-icon" clear item-right></ion-icon>
+      <span > {{ 'documents.documentList.actions.markAsUnread' | translate }}</span>
+    </button>
+    <button menuClose ion-item (click)="markAsFavorite(doc)">
+      <ion-icon  name="custom-favorite-icon" clear item-right></ion-icon>
+      <span *ngIf="!doc.favoritedByUser">{{ 'documents.documentList.actions.favorite' | translate }}</span>
+      <span *ngIf="doc.favoritedByUser">{{ 'documents.documentList.actions.unfavorite' | translate }}</span>
+    </button>
+    <button menuClose ion-item (click)="openLabelEditor(doc)">
+      <ion-icon  name="custom-tags-edit-icon" clear item-right></ion-icon>
+        {{ 'documents.documentList.actions.labels' | translate }}
+    </button>
+    <button menuClose ion-item (click)="openMoveToFolderModal(doc)">
+      <ion-icon  name="custom-send-to-user-icon" clear item-right></ion-icon>
+        {{ 'documents.documentList.actions.move' | translate }}
+    </button>
+    <button menuClose ion-item (click)="toggleSendToUser(doc)" id="sendToMe">
+      <ion-icon  name="custom-send-to-me-icon" clear item-right></ion-icon>
+      <span *ngIf="!doc.pendingUserDelivery">{{ 'documents.documentList.actions.moveToSendToMe' | translate }}</span>
+      <span *ngIf="doc.pendingUserDelivery">{{ 'documents.documentList.actions.removeFromSendToMe' | translate }}</span>
+    </button>
+    <button menuClose ion-item (click)="deleteDocument(doc)" id="destroyMe">
+      <ion-icon  name="custom-trash-icon" clear item-right></ion-icon>
+        {{ 'documents.documentList.actions.destroy' | translate }}
+    </button>
+</ion-list>

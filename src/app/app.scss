@@ -1,0 +1,612 @@
+/* http://ionicframework.com/docs/v2/theming/*/
+
+/* App Global Sass*/
+
+/* --------------------------------------------------*/
+
+/* Put style rules here that you want to apply globally. These*/
+
+/* styles are for the entire app and not just one component.*/
+
+/* Additionally,*/
+
+/* this file can be also used as an entry point*/
+
+/* to import other Sass files to be included in the output CSS.*/
+
+/**/
+
+/* Shared Sass variables,*/
+
+/* which can be used to adjust Ionic's*/
+
+/* default Sass variables,*/
+
+/* belong in "theme/variables.scss".*/
+
+
+
+/**/
+
+/* To declare rules for a specific mode,*/
+
+/* create a child rule*/
+
+/* for the .md,*/
+
+/* .ios,*/
+
+/* or .wp mode classes. The mode class is*/
+
+/* automatically applied to the <body> element in the app.*/
+
+.item:not(.item-md-secondary) {
+  color: #222;
+}
+
+app-menu button:not(.button-ios-secondary) button:not(.button-md-secondary),app-menu ion-item-divider {
+  color: #555;
+}
+
+.toolbar-content .searchbar .button {
+  margin: 0px auto;
+}
+.searchbar-input-container {
+  border-radius: 25px;
+}
+.item-md ion-icon[item-left] {
+  margin-right: 0px;
+}
+.menu-inner ion-content {
+  background: #eeeeee;
+}
+
+.createFolder {
+  padding: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: map-get($colors, 'secondary');
+
+  @media (min-width:800px) {
+    padding-left: 24px;
+  }
+
+  span {
+    margin-left: 8px;
+  }
+
+}
+#closing-button{
+  margin-top: 10px;
+  background: none;
+  color: black;
+  box-shadow: none;
+
+}
+div h4 {
+  position: relative;
+  padding: 0px !important;
+  margin: 0px auto !important;
+  font-size: 20px;
+  font-weight: 400;
+  color: #444;
+}
+
+
+@media (min-width:800px) {
+  .searchbar-md .searchbar-input {
+    background-color: #f5f5f5;
+    box-shadow: none;
+  }
+
+
+  .ion-page ion-conten t .scroll-content .paymentSelect .list {
+    margin-top: 40px !important;
+    margin-bottom: 24px;
+  }
+
+  app-menu {
+    display: block;
+    position: relative;
+    z-index: 99999999;
+
+    .item-md {
+      padding-left: 24px !important;
+    }
+
+  }
+
+  .yes-menu {
+    .ion-page > {
+      ion-content {
+        margin-left: 250px;
+        width: calc(100% - 250px);
+      }
+
+    }
+
+  }
+
+  body {
+    color: #222;
+    font-size: 14px;
+  }
+
+  .header-logo {
+    display: block !important;
+    padding-left: 22px;
+  }
+
+  .bar-button-menutoggle-md {
+    display: none;
+  }
+
+  div h4 {
+    margin-top: 20px !important;
+  }
+
+  page-inbox ion-item-divider .label {
+    color: #888;
+  }
+
+  .desktop-search {
+    background-color: #f5f5f5;
+    border-radius: 3px;
+    margin: 0px 40px;
+  }
+
+  .toolbar-title {
+    min-width: 150px;
+  }
+
+  .toolbar {
+    height: 64px;
+  }
+
+  .toolbar-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    ion-title {
+      -webkit-box-flex: 0;
+      -ms-flex: 0;
+      flex: 0;
+    }
+
+  }
+
+
+  .modal-wrapper {
+    .toolbar-title {
+      padding-left: 32px;
+    }
+
+    .scroll-content {
+      background: #fff !important;
+      padding: 16px;
+
+      .list {
+        box-shadow: none;
+      }
+
+    }
+
+  }
+
+  .ion-page ion-content .scroll-content > * {
+    position: relative;
+    max-width: 800px;
+    margin: 0px auto;
+  }
+
+  .ion-page ion-content .scroll-content {
+    padding-top: 20px;
+    padding-bottom: 50px;
+
+    .list {
+      position: relative;
+      max-width: 800px;
+      margin: 10px auto !important;
+    }
+
+  }
+
+  .scroll-content .list {
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .item-md-light,
+  .item-divider-md-light {
+    background: white;
+  }
+
+  app-menu .active {
+    color: #222 !important;
+    font-weight: 500;
+  }
+
+  app-menu button:hover {
+    color: #222 !important;
+    font-weight: 500;
+  }
+
+  app-menu button:not(.button-md-secondary),app-menu ion-item-divider {
+    background-color: #eee !important;
+    color: #666;
+    font-size: 14px;
+  }
+
+  app-menu ion-toggle button:not(.button-md-secondary) {
+    background-color: transparent !important;
+  }
+
+  app-menu ion-item-divider {
+    font-size: 1.2rem !important;
+    border-bottom: none !important;
+    border-top: 1px solid #ddd !important;
+  }
+
+  app-menu {
+    overflow-x: hidden;
+
+    .item > ion-icon,
+    .item-inner > ion-icon {
+      min-height: 2.4rem;
+      font-size: 2.4rem;
+      line-height: 1;
+    }
+
+    .item-md ion-icon[item-left] {
+      margin-right: 0px;
+    }
+
+    .list-md {
+      margin-bottom: 0;
+    }
+
+  }
+
+  app-menu .item-inner {
+    border-top: none !important;
+  }
+
+  app-menu .item-inner {
+    border-bottom: none !important;
+  }
+
+  page-free-account ion-list.customized,
+  page-complete-sign-up ion-list.customized,
+  signup-step1 ion-list.customized,
+  signup-step2 ion-list,
+  page-login ion-list,
+  page-my-data .data-form {
+    padding-left: 16px;
+    padding-right: 16px;
+    background: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-top: 24px;
+    padding-bottom: 40px;
+  }
+
+  page-login ion-list {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  page-free-account ion-list.customized ion-item,
+  page-complete-sign-up ion-list.customized ion-item,
+  signup-step1 ion-list.customized ion-item,
+  signup-step2 ion-item,
+  page-my-data .data-form ion-item {
+    padding-left: 0 !important;
+    width: calc(50% - 32px);
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-preferred-size: calc(50% - 32px);
+    flex-basis: calc(50% - 32px);
+    margin: 0 16px !important;
+  }
+
+  page-my-data .data-form .account-email ion-item,
+  page-my-data .data-form .account-password ion-item {
+    width: calc(100% - 32px);
+    -ms-flex-preferred-size: calc(100% - 32px);
+    flex-basis: calc(100% - 32px);
+  }
+
+  page-my-data .data-form .account-email.list,
+  page-my-data .data-form .account-password.list {
+    margin: 0 !important;
+    width: 50%;
+  }
+
+  page-free-account ion-list.customized ion-item .item-inner,
+  page-complete-sign-up ion-list.customized ion-item .item-inner,
+  signup-step1 ion-list.customized ion-item .item-inner,
+  signup-step2 ion-item .item-inner,
+  page-login ion-item .item-inner,
+  page-my-data .data-form ion-item .item-inner {
+    padding-left: 0 !important;
+  }
+
+}
+
+.badge-md,
+.badge-ios {
+  padding: 5px;
+  font-size: 12px;  /*background: #E9E9E9;*/
+  color: #fff;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.progress-chart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 250px;
+  margin: 0 auto;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+
+  .step {
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    background: rgba(0, 0, 0, .08);
+    border-radius: 100%;
+    text-align: center;
+    color: #888;
+
+    &.active {
+      background: map-get($colors, 'primary');
+      color: white;
+    }
+
+    ion-icon {
+      font-size: 24px;
+      line-height: 2;
+    }
+
+  }
+
+  .line {
+    height: 5px;
+    width: 20px;
+    display: inline-block;
+    background: rgba(0, 0, 0, .08);
+
+    &.active {
+      background: map-get($colors, 'primary');
+    }
+
+  }
+
+}
+
+.toolbar-content-md {
+  .progress-chart {
+    padding: 0 12px;
+  }
+
+}
+
+ion-menu {
+  .list-md .item-block .item-inner,
+  .list-ios .item-block .item-inner {
+    border: none;
+  }
+
+  .item-divider-md,
+  .item-divider-ios {
+    border-bottom: none;
+    border-top: 1px solid #dedede;
+    background: none;
+  }
+
+  .item-md .label-md,
+  .item-ios .label-ios {
+    font-size: 14px;
+  }
+
+  .item-md.item-divider .label-md,
+  .item-ios.item-divider .label-ios {
+    font-size: 12px;
+    color: #858589;
+  }
+
+  button.item-ios:not([detail-none]) .item-inner {
+    background: none;
+  }
+
+  .list-ios > .item-block:last-child {
+    border-bottom: none;
+  }
+
+  .list-ios > .item-block:first-child {
+    border-top: none;
+  }
+
+  .list-ios {
+
+  }
+
+  .list-md {
+
+  }
+
+}
+
+.toolbar-background-md,
+.toolbar-background-ios {
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+.header-md::after {
+  background: none;
+}
+
+ion-list:not(.main-menu) {
+  .item-ios,
+  .item-md {
+    padding-left: 0;
+  }
+
+  @media (min-width:800px) {
+    .item.item-md .checkbox-md {
+      margin-left: 24px;
+      margin-right: 0px;
+    }
+
+  }
+
+  .item-ios .item-inner {
+    padding-left: 16px;
+  }
+
+  .item-md .item-inner {
+    padding-left: 24px;
+  }
+
+}
+
+.bar-button-default-ios {
+  color: map-get($colors, 'secondary');
+}
+
+.menu-logo .item-inner {
+  border-bottom: none !important;
+}
+
+.menu-logo {
+  ion-label {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+}
+
+.split-pane-md.split-pane-visible > .split-pane-side {
+  max-width: 250px !important;  /* override default behavior of split-panel*/
+}
+
+.app-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100vh;
+  
+}
+
+.user-notification-banner {
+  background-color: color($colors, primary);
+  font-size: 16px;
+  ion-app.ios & {
+    padding-top: 24px;
+  }
+}
+
+
+.split-panel-container {
+  position: relative;
+  width: 100%;
+  -webkit-box-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.complete-signup-link{
+  color:#ffffff;
+}
+#app-menu-content {
+  position: relative !important;
+  app-menu{
+    display: block;
+  }
+}
+
+#app-menu-toolbar{
+  padding-top: 4px !important;
+}
+
+ion-list.main-menu.list.list-ios{
+  margin: 0 !important;
+}
+
+.app-root{
+  position: absolute;
+  bottom: 0;
+}
+
+.toast-message{
+  white-space: normal !important;
+}
+
+
+/* workaround to solve bug in ionic 
+ * reported here: https://github.com/driftyco/ionic/issues/5945
+ * NOT SURE is this still a bug in newest versions
+ */
+.ios {
+    ion-toggle[checked=false]{
+        .toggle-inner {
+            transform: translateZ(0);
+        }
+    }
+}
+
+.toolbar-content {
+  justify-content: center;
+}
+
+
+/* global tweak to remove spinners
+ * in webkit input boxes
+ * this won't work for firefox
+ */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.input-icon {
+  width: 35%;
+  height: 35%;
+}
+ion-icon {
+  &[class*="custom-"] {
+    mask-size: contain;
+    mask-position: 50% 50%;
+    mask-repeat: no-repeat;
+    background: currentColor;
+    width: 1em;
+    height: 1em;
+  }
+  &[class*="custom-input-icon"] {
+    mask-image: url(../assets/img/icons/inbox.svg);
+  }
+  &[class*="custom-default-icon"] {
+    mask-image: url(../assets/img/icons/folder.svg);
+  }
+}
+
+

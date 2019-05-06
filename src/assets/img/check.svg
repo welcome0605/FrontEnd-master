@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="25px" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group">
+            <circle id="Oval" fill="#65D15F" cx="12.5" cy="12.5" r="12.5"></circle>
+            <path d="M11.044474,15.3111874 L8.35144047,12.799893 C8.02599846,12.4964134 7.52255891,12.520233 7.21905141,12.8457049 C6.9134279,13.173446 6.93044886,13.6783605 7.25234256,13.9785312 L10.4083358,16.9215425 C10.4804917,16.988829 10.5613977,17.0400261 10.6469347,17.0754131 C10.6689605,17.0955978 10.6923452,17.1147409 10.7170754,17.1327084 C11.0796197,17.3961122 11.578974,17.3173023 11.838021,16.9607547 L17.4219268,9.27516767 C17.6739743,8.9282541 17.5991074,8.41752862 17.2390732,8.15594847 C16.876529,7.89254462 16.3771746,7.97135459 16.1181277,8.32790214 L11.044474,15.3111874 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,44 @@
+<ion-header style="background-color: #f00">
+
+
+        <ion-toolbar>
+            <ion-buttons class="modal-pdf-header">
+                <button start ion-button (click)="dismiss()">
+                    <!--<span ion-text color="primary" showWhen="ios">{{ 'general.cancel' | translate }}</span>-->
+                    <ion-icon name="md-close" showWhen="android,windows,core,ios"></ion-icon>
+                </button>
+                <button end ion-button class="action-menu-button" #openAction *ngIf="!document.deletedAt" (click)="openMenu($event, document)">
+                    <!--<span ion-text color="primary" showWhen="ios">{{ 'general.cancel' | translate }}</span>-->
+                    <ion-icon name="md-more" showWhen="android,windows,core,ios"></ion-icon>
+                </button>
+            </ion-buttons>
+
+
+        </ion-toolbar>
+
+
+
+
+</ion-header>
+
+
+
+
+
+<ion-content class="modal-pdf-container">
+
+   <pdf-viewer [src]="document"
+            [original-size]="false"
+            [autoresize]="false"
+            [fit-to-page]="false"
+            style="display: block;"
+
+
+    >
+
+    </pdf-viewer>
+
+
+</ion-content>
+
+<!--<iframe class="docpdf" [src]="document"></iframe>-->

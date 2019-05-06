@@ -1,0 +1,74 @@
+page-user-payment-tutorial {
+  ion-content {
+    .list ul {
+      padding: 0;
+    }
+    .scroll-content {
+      background: #EEEEEE;
+    }
+    .scroll-content .list {
+      box-shadow: none;
+    }
+    .list {
+      font-size: 17px;
+      text-align: left;
+      width: 80%;
+    }
+    .list > ul {
+      display: inline-block;
+    }
+
+    .card{
+      border-radius: 7px;
+    }
+  }
+    .full-image{
+      display: inline-block;
+      width: 35%;
+      height: 35%;
+      contain: strict;
+    }
+   ion-slide {
+     height: 80%;
+   }
+  .fb-button{
+    border-radius: 25px;
+    background-color: #4267b2;
+  }
+  .submit-button{
+    border-radius: 25px;
+  }
+  .card-content {
+    margin-left: 15px;
+  }
+  button {
+    background: none;
+  }
+  #footer {
+    padding-bottom: 10px;
+  }
+}
+@media only screen and (max-width: 799px){
+  page-user-payment-tutorial {
+    ion-content {
+      .full-image {
+        display: inline-block;
+        width: 30%;
+        height: 30%;
+        contain: strict;
+      }
+      ion-slide {
+        height: 40%;
+      }
+      .list {
+        font-size: 80%;
+        text-align: left;
+        width: 95%;
+      }
+
+      #footer {
+        padding-bottom: 20px;
+      }
+    }
+  }
+}

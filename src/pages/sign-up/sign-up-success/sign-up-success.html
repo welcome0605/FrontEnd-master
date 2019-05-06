@@ -1,0 +1,13 @@
+<ion-content padding text-center>
+  <ion-row class="logo">
+    <ion-col>
+      <img src="assets/img/digitalkasten-logo.svg">
+    </ion-col>
+  </ion-row>
+  <ion-list padding>
+    <ion-icon ios="ios-checkmark-circle" md="md-checkmark-circle"></ion-icon>
+    <h1>{{ 'signUp.signUpSuccess.title' | translate }}</h1>
+    <p>{{ 'signUp.signUpSuccess.text' | translate }}</p>
+    <button ion-button full (click)="onLogin()">{{ 'signUp.signUpSuccess.login' | translate }}</button>
+  </ion-list>
+</ion-content>

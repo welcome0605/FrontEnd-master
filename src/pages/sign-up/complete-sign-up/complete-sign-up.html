@@ -1,0 +1,92 @@
+<ion-content padding-bottom>
+  <div padding-vertical>
+    <div class="progress-wrapper">
+      <button ion-button clear icon-left (click)="onBack()">
+        <ion-icon name='arrow-back'></ion-icon>
+        <ng-template showWhen="ios">
+          {{ 'myData.back' | translate }}
+        </ng-template>
+      </button>
+      <div class="progress-chart">
+        <div class="step active">
+          <ion-icon name="md-mail"></ion-icon>
+        </div>
+        <div class="line"></div>
+        <div class="step">
+          <ion-icon name="md-card"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form novalidate [formGroup]="form" (ngSubmit)="onSubmit($event)" (keyup)="checkUserForm(4)">
+    <header padding>
+      <h4>{{ 'myData.currentAddress' | translate }}</h4>
+    </header>
+
+    <ion-list class="panel customized" style="border-radius: 7px">
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'myData.firstname' | translate }}" autocomplete="on" formControlName="firstName" required stacked></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'myData.lastname' | translate }}" autocomplete="on" formControlName="lastName" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'myData.company' | translate }}" autocomplete="on" formControlName="company"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'myData.address' | translate }}" autocomplete="on" formControlName="address" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="number" placeholder="{{ 'myData.zip' | translate }}" required autocomplete="on" formControlName="zip"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'myData.city' | translate }}" required autocomplete="on" formControlName="city"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'myData.phone' | translate }}" autocomplete="on" formControlName="phone"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <header padding>
+      <h4>{{ 'myData.mailDeliveryAddressHeading' | translate }}</h4>
+    </header>
+
+    <div padding style="padding: 5px 16px 16px 16px;">
+      <button (click)="copyAddress($event)" ion-button>{{ 'myData.copyFromAddress' | translate }}</button>
+    </div>
+
+    <ion-list class="panel customized" style="border-radius: 7px">
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'myData.mailDeliveryFirstname' | translate }}" autocomplete="on" formControlName="mailDeliveryFirstName" required stacked></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'myData.mailDeliveryLastname' | translate }}" autocomplete="on" formControlName="mailDeliveryLastName" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'myData.mailDeliveryCompany' | translate }}" autocomplete="on" formControlName="mailDeliveryCompany"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'myData.mailDeliveryAddress' | translate }}" autocomplete="on" formControlName="mailDeliveryAddress" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="number" placeholder="{{ 'myData.mailDeliveryZip' | translate }}" required autocomplete="on" formControlName="mailDeliveryZip"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'myData.mailDeliveryCity' | translate }}" required autocomplete="on" formControlName="mailDeliveryCity"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <div padding-top class="errors" *ngIf="errors.length">
+      <ion-list>
+        <ion-item color="danger" *ngFor="let error of errors">
+          {{ error }}
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <div padding>
+      <button ion-button full type="submit">{{ 'general.continue' | translate }}</button>
+    </div>
+  </form>
+</ion-content>
